@@ -6,37 +6,53 @@
   <title>offrm studio – services</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .services {
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      font-family: sans-serif;
       height: 100vh;
       display: flex;
+      justify-content: center;
       align-items: center;
+    }
+
+    .services {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
       justify-content: center;
       text-align: center;
-      color: white;
-      background-color: black;
-      font-family: sans-serif;
       font-size: 1.2rem;
       text-transform: lowercase;
-      letter-spacing: 0.5px;
-      padding: 0 2rem;
+      padding: 1rem;
+      gap: 10px;
     }
 
     .services a {
       color: white;
       text-decoration: none;
-      margin: 0 10px;
+      padding: 0.3rem 0.8rem;
       transition: opacity 0.2s;
     }
 
     .services a:hover {
       opacity: 0.5;
     }
+
+    /* Mobile responsive */
+    @media (max-width: 600px) {
+      .services {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="services">
-    <a href="representation.html">représentation de marque</a> –
-    <a href="curation.html">curation d’évènement</a> –
+    <a href="representation.html">représentation de marque</a>
+    <a href="curation.html">curation d’évènement</a>
     <a href="production.html">production audiovisuelle</a>
   </div>
 </body>
