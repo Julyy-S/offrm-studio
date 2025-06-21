@@ -19,3 +19,17 @@ body {
     opacity: 0.7;
   }
   
+  .services {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-color: black;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  padding: 0 2rem;
+}
