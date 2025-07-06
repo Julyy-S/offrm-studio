@@ -1,0 +1,50 @@
+/* === STYLES SPÉCIFIQUES À LA PAGE REPRESENTATION === */
+
+body.page-representation {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-representation .services {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row; /* ✅ Desktop : aligné horizontalement */
+  padding: 3rem 1rem;
+  text-align: center;
+  gap: 1rem;
+}
+
+.dot-separator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 0 0.5rem; /* ✅ Meilleur espacement horizontal pour desktop */
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+
+  .page-representation .services {
+    position: static;              /* ✅ annule l'absolu du style.css */
+    transform: none;               /* ✅ annule translateY */
+    flex-direction: column;        /* ✅ vertical pour mobile */
+    gap: 1.5rem;
+    padding: 1rem 1rem 2rem 1rem;  /* ✅ plus haut grâce au padding-top augmenté */
+    text-align: center;
+  }
+
+  .page-representation .services span {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .dot-separator {
+    width: 8px;
+    height: 8px;
+    margin: 0.5rem 0; /* ✅ espacement vertical pour mobile */
+  }
+}

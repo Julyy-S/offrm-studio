@@ -1,0 +1,53 @@
+/* avecoffrm.css */
+
+.avec-offrm-wrapper {
+  padding-top: 160px; /* Ajuste ici pour monter/descendre tout le bloc */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.avec-offrm-title {
+  text-align: center;
+  font-size: 1.8rem; /* Ajuste ici si besoin de réduire le titre */
+}
+
+.artist-columns {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.artist-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+@media screen and (max-width: 768px) {
+
+  .avec-offrm-wrapper {
+    padding-top: 250px;  /* Descend légèrement le bloc sur mobile */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .avec-offrm-title {
+    font-size: 1.2rem; /* Réduit un peu le titre */
+  }
+
+  .artist-columns {
+    flex-direction: row;   /* Toujours en ligne (horizontal) */
+    gap: 20px;             /* Moins d'espace entre les colonnes */
+    flex-wrap: wrap;       /* Permet de s'adapter si trop serré */
+  }
+
+    .artist-column div {
+    font-size: 0.8rem;
+  }
+}

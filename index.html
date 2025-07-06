@@ -5,14 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>offrm studio</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
 </head>
-<body onclick="goToServices()" onwheel="goToServices()">
-  offrm studio
+
+<body class="flex-centered">
+  <span class="logo"><span class="circle-o"></span>ffrm studio</span>
 
   <script>
-    function goToServices() {
+    setTimeout(() => {
       window.location.href = "services.html";
-    }
+    }, 3000); // 3 secondes
   </script>
 </body>
 </html>
+

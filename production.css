@@ -1,0 +1,50 @@
+/* === STYLES SPÉCIFIQUES À LA PAGE PRODUCTION === */
+
+body.page-production {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-production .services {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row; /* ✅ Desktop : horizontal */
+  padding: 3rem 1rem;
+  text-align: center;
+  gap: 1rem;
+}
+
+.dot-separator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 0 0.5rem; /* Espace horizontal desktop */
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+
+  .page-production .services {
+    position: static;
+    transform: none;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem 1rem 2rem 1rem;  /* ✅ Texte plus haut */
+    text-align: center;
+  }
+
+  .page-production .services span {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .dot-separator {
+    width: 8px;
+    height: 8px;
+    margin: 0.5rem 0;
+  }
+}

@@ -1,0 +1,72 @@
+/* === STYLES SPÉCIFIQUES À LA PAGE SERVICES === */
+
+body.page-services {
+  position: relative;
+  overflow: hidden;
+}
+
+body.page-services::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('grey_services.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: 0;
+}
+
+
+/* === CENTRAGE DU CONTENU DE LA PAGE SERVICES === */
+
+.page-services .services {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .page-services .services {
+    flex-direction: row;
+    gap: 4rem;
+    font-size: 1rem;
+  }
+}
+
+
+/* === Les points blancs entre services === */
+
+
+.dot-separator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 0 0.1rem;
+  vertical-align: middle;
+}
+
+
+@media (max-width: 768px) {
+  .page-services .services {
+    gap: 1rem; /* espace vertical entre chaque bloc */
+    padding: 3rem 1rem;
+  }
+
+  .dot-separator {
+    margin: 0.5rem 0; /* espace autour des ronds */
+    width: 8px;
+    height: 8px;
+  }
+
+  .page-services .services a {
+    font-size: 1rem;
+    line-height: 1;
+  }
+}

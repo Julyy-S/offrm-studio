@@ -3,28 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>offrm studio – services</title>
+  <title>offrm studio – avec offrm</title>
 
-  <!-- CSS général (polices, couleurs, menu, base...) -->
-  <link rel="stylesheet" href="style.css">
-  
-  <!-- CSS spécifique à cette page -->
-  <link rel="stylesheet" href="services.css">
-
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="avecoffrm.css" />
   <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
-
 </head>
 
-<body class="page-services"> <!-- ✅ classe clé pour cibler cette page -->
-
-  <!-- Logo en haut à gauche -->
+<body class="page-standard">
   <div class="site-name">offrm studio</div>
 
-
-  <!-- Bouton burger -->
   <div class="burger" onclick="toggleMenu()"></div>
 
-  <!-- Menu déroulant -->
   <nav class="menu" id="menu">
     <a href="a_propos.html">à propos</a>
     <a href="services.html">services</a>
@@ -32,16 +22,29 @@
     <a href="contact.html">contact</a>
   </nav>
 
-  <!-- Liens de la section services -->
-  <div class="services">
-    <a href="representation.html">représentation de marques</a>
-    <span class="dot-separator"></span>
-    <a href="curation.html">curation d'événements</a>
-    <span class="dot-separator"></span>
-    <a href="production.html">production audiovisuelle</a>
+  <div class="avec-offrm-wrapper">
+    <div class="avec-offrm-title">avec offrm</div>
+
+    <div class="artist-columns">
+
+      <div class="artist-column">
+        <div>sonsoee</div>
+        <div>glowour</div>
+      </div>
+
+      <div class="artist-column">
+        <div>studio magma</div>
+        <div>chai artworks</div>
+      </div>
+
+      <div class="artist-column">
+        <div>hyeja</div>
+        <div>vorro nova</div>
+      </div>
+
+    </div>
   </div>
 
-  <!-- Script du menu -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');

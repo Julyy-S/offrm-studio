@@ -3,12 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>production – offrm studio</title>
+  <title>offrm studio – production</title>
+
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="production.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
+
 </head>
-<body>
+
+<body class="page-production">
+  <div class="site-name">offrm studio</div>
+
+  <div class="burger" onclick="toggleMenu()"></div>
+
+  <nav class="menu" id="menu">
+    <a href="a_propos.html">à propos</a>
+    <a href="services.html">services</a>
+    <a href="avecoffrm.html">avec offrm</a>
+    <a href="contact.html">contact</a>
+  </nav>
+
   <div class="services">
-    contenu à venir
+    <span>production audiovisuelle</span>
+    <span class="dot-separator"></span>
+    <span>nous réalisons des films artistiques, des films de marques, des clips musicaux, des séries et des documentaires</span>
   </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+  </script>
+
 </body>
 </html>

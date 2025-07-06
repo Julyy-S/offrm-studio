@@ -1,35 +1,294 @@
+/* ========== STYLES GÉNÉRAUX ========== */
+
 body {
-    margin: 0;
-    background-color: black;
-    color: white;
-    font-family: 'Helvetica Neue', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-transform: lowercase;
-    font-size: 2rem;
-    cursor: pointer;
-  }
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  a:hover {
-    opacity: 0.7;
-  }
-  
-  .services {
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-family: 'Asap', sans-serif;
+  font-weight: 300;
+  text-transform: lowercase;
+  font-size: 2rem;
+}
+
+/* Optionnel : si une page veut centrer verticalement */
+body.flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
+}
+
+/* ========== LIENS ========== */
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* ========== SECTION SERVICES ========== */
+
+.services {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ========== MENU BURGER ========== */
+
+.burger {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  background-color: white; /* rond plein blanc */
+  border: none; /* supprime la bordure blanche */
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 11;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.burger:hover {
+  transform: scale(1.1);
+  background-color: #e0e0e0; /* Gris très clair */;
+}
+
+
+
+.burger:before {
+  content: "";
+}
+
+.menu {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid white;
+  padding: 1rem;
+  border-radius: 8px;
+  display: none;
+  flex-direction: column;
+  gap: 0.8rem;
+  z-index: 10;
+}
+
+.menu a {
   color: white;
-  background-color: black;
-  font-family: sans-serif;
+  text-decoration: none;
+  text-transform: lowercase;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.menu a:hover {
+  opacity: 1;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+/* Logo "o" rempli */
+
+.logo {
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 0.2em; /* Espace entre le cercle o et le texte "ffrm studio" */
+  transform: translateX(20px); /* Décale tout le bloc .logo vers la droite */
+  padding-left: 70px; /* Décale le texte vers la droite. Ajoute un espace intérieur avant le contenu (donc décale vers la droite) */
+  font-weight: normal;
+}
+
+.circle-o {
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  background-color: white;
+  border-radius: 50%;
+}
+
+
+
+/*Pour ajouter le logo haut gauche sauf index */
+
+.page-standard .site-name,
+.page-services .site-name,
+.page-a-propos .site-name,
+.page-production .site-name,
+.page-representation .site-name,
+.page-curation .site-name
+.page-contact .site-name {
+  position: fixed;
+  top: 20px;
+  left: 20px;
   font-size: 1.2rem;
   text-transform: lowercase;
-  letter-spacing: 0.5px;
-  padding: 0 2rem;
+  font-family: 'Asap', sans-serif;
+  font-weight: 300;
+  color: white;
+  z-index: 12;
+  pointer-events: none;
 }
+
+.page-a-propos p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.page-production {
+  position: relative;
+  height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+.page-production .services {
+  position: absolute;
+  top: 50%;  /* ajustable */
+  left: 15%; /* ajustable */
+  transform: translateY(-50%); /* pour centrer verticalement autour du top */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+
+.page-representation {
+  position: relative;
+  height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+.page-representation .services {
+  position: absolute;
+  top: 50%;  /* ajustable */
+  left: 15%; /* ajustable */
+  transform: translateY(-50%); /* pour centrer verticalement autour du top */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+.page-curation {
+  position: relative;
+  height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+.page-curation .services {
+  position: absolute;
+  top: 50%;  /* ajustable */
+  left: 15%; /* ajustable */
+  transform: translateY(-50%); /* pour centrer verticalement autour du top */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+
+.page-contact {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+  color: white;
+}
+
+.page-contact .background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("grey_contact.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.page-contact .content {
+  position: relative;
+  z-index: 2;
+}
+
+.page-contact .site-name,
+.page-contact .burger,
+.page-contact .menu {
+  z-index: 3;
+}
+
+@media screen and (max-width: 768px) {
+  .page-a-propos {
+    background-image: url("CJ_gris.jpg");
+    background-size: 140% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  .page-a-propos .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 100px 20px 60px 20px;
+    min-height: 100%;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .page-a-propos .text-side {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .page-a-propos .image-side {
+    display: none;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    background-color: black;
+  }
+
+  body.page-a_propos {
+  background-image: url('CJ_gris.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* important pour couvrir tout le scroll */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    font-size: 1.5rem;
+    transform: none;
+    padding-left: 0;
+  }
+}
+
+

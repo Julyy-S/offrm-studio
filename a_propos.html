@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos – Offrm Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
+
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+
+    .wrapper {
+      display: flex;
+      align-items: flex-start;
+      padding: 0;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .image-side {
+      flex: 0 0 35%;
+      max-width: 35%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .image-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .text-side {
+      flex: 1;
+      padding: 60px;
+      max-width: 50%;
+      text-align: left;
+      overflow-y: auto;
+    }
+
+    p {
+      margin-bottom: 1.5em;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body class="page-a-propos">
+  <div class="site-name">offrm studio</div>
+
+  <div class="burger" onclick="toggleMenu()"></div>
+
+  <nav class="menu" id="menu">
+    <a href="a_propos.html">à propos</a>
+    <a href="services.html">services</a>
+    <a href="avecoffrm.html">avec offrm</a>
+    <a href="contact.html">contact</a>
+  </nav>
+
+  <div class="wrapper">
+    <div class="image-side">
+      <img src="CJ.jpg" alt="Portrait CJ">
+    </div>
+    <div class="text-side">
+      <p>On n’a jamais vraiment trouvé notre place.<br>
+        Toujours un peu à côté, jamais vraiment dedans.</p>
+
+      <p>Alors on a créé <strong>Offrm studio</strong>.<br>
+        L’endroit qu’on cherche quand tout sonne faux.<br>
+        Quand aucun cadre ne convient.<br>
+        Quand on veut faire les choses autrement.</p>
+
+      <p><strong>Offrm studio</strong>, c’est en dehors des lignes — un coin calme, un refuge créatif.<br>
+        Un espace pour penser libre, tenter, se tromper, recommencer.<br>
+        Là où les visions se croisent, où les cultures se mêlent,<br>
+        où les idées dépassent les contours.</p>
+
+      <p>Ce n’est pas lisse. Ce n’est pas étiqueté.<br>
+        C’est vivant.<br>
+        On s’y retrouve pour créer avec sincérité.<br>
+        Brut, sans filtre, sans apparat.</p>
+
+      <p><strong>Offrm studio, la pièce qui manquait.</strong></p>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+  </script>
+</body>
+</html>
