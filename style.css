@@ -126,7 +126,7 @@ a:hover {
 .page-a-propos .site-name,
 .page-production .site-name,
 .page-representation .site-name,
-.page-curation .site-name
+.page-curation .site-name,
 .page-contact .site-name {
   position: fixed;
   top: 20px;
