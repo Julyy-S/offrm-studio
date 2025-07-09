@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>offrm studio – services</title>
+
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/services.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body class="page-services">
+
+  <div class="site-name">offrm studio</div>
+
+  <div class="burger" onclick="toggleMenu()"></div>
+
+  <nav class="menu" id="menu">
+    <a href="/a_propos/">à propos</a>
+    <a href="/services/">services</a>
+    <a href="/avecoffrm/">avec offrm</a>
+    <a href="/contact/">contact</a>
+  </nav>
+
+  <div class="services">
+    <a href="/representation/">représentation de marques</a>
+    <span class="dot-separator"></span>
+    <a href="/curation/">curation d'événements</a>
+    <span class="dot-separator"></span>
+    <a href="/production/">production audiovisuelle</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+  </script>
+
+</body>
+</html>
