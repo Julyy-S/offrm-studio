@@ -12,10 +12,16 @@
   <span class="logo"><span class="circle-o"></span>ffrm studio</span>
 
   <script>
-    setTimeout(() => {
+    function redirectToServices() {
       window.location.href = "/services/";
-    }, 3000); // 3 secondes
+    }
+
+    // Redirection après 3 secondes
+    setTimeout(redirectToServices, 3000);
+
+    // Redirection immédiate si clic ou scroll
+    document.addEventListener('click', redirectToServices);
+    document.addEventListener('scroll', redirectToServices);
   </script>
 </body>
 </html>
-
