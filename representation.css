@@ -26,6 +26,10 @@ body.page-representation {
   vertical-align: middle;
 }
 
+.page-representation .services span {
+  font-size: 1rem;
+}
+
 @media (max-width: 768px) {
 
   .page-representation .services {

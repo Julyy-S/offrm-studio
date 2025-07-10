@@ -26,6 +26,11 @@ body.page-curation {
   vertical-align: middle;
 }
 
+.page-curation .services span {
+  font-size: 1rem;
+}
+
+
 @media (max-width: 768px) {
 
   .page-curation .services {

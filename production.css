@@ -26,6 +26,10 @@ body.page-production {
   vertical-align: middle;
 }
 
+.page-production .services span {
+  font-size: 1rem;
+}
+
 @media (max-width: 768px) {
 
   .page-production .services {
