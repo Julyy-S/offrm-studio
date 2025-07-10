@@ -137,7 +137,6 @@ a:hover {
   font-weight: 300;
   color: white;
   z-index: 12;
-  pointer-events: none;
 }
 
 .page-a-propos p {
