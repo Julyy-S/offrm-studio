@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact – Offrm Studio</title>
+  <title>Contact – offrm studio</title>
   <link rel="stylesheet" href="/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
 
@@ -73,21 +73,21 @@
   <div class="background-image"></div>
 
   <a href="/index.html" class="site-name">offrm studio</a>
-  
+
   <div class="burger" onclick="toggleMenu()"></div>
 
   <nav class="menu" id="menu">
-    <a href="/a_propos/">à propos</a>
-    <a href="/services/">services</a>
-    <a href="/avecoffrm/">avec offrm</a>
-    <a href="/contact/">contact</a>
+    <a href="/about/">about</a>
+    <a href="/services-en/">services</a>
+    <a href="/withoffrm/">with offrm</a>
+    <a href="/contact-en/">contact</a>
   </nav>
 
   <div class="content">
-    <p>vous recherchez la pièce qui n'existe pas encore?<br>
-    peut-être que tout commence ici.</p>
+    <p>looking for the room that doesn’t exist yet?<br>
+    maybe it starts here.</p>
 
-    <p>pour toute information, collaborations ou idées prêtes à être réalisées, merci de nous contacter.</p>
+    <p>for all inquiries, collaborations, or ideas waiting to unfold, please reach out.</p>
 
     <p class="email">
       <strong><a href="mailto:info@offrmstudio.com">info@offrmstudio.com</a></strong>
@@ -101,38 +101,31 @@
     </p>
   </div>
 
+  <footer class="language-selector">
+    <a href="#" onclick="setLanguage('fr')">FR</a> |
+    <a href="#" onclick="setLanguage('en')">EN</a>
+  </footer>
+
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
       menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
     }
-  </script>
 
-<footer class="language-selector">
-    <a href="#" onclick="setLanguage('fr')">FR</a> | 
-    <a href="#" onclick="setLanguage('en')">EN</a>
-  </footer>
-
-  <script>
-  function toggleMenu() {
-    const menu = document.getElementById('menu');
-    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-  }
-
-  function setLanguage(lang) {
-    localStorage.setItem('lang', lang);
-    if(lang === 'fr') {
-      window.location.href = '/contact/';
-    } else if(lang === 'en') {
-      window.location.href = '/contact-en/';
+    function setLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      if(lang === 'fr') {
+        window.location.href = '/contact/';
+      } else if(lang === 'en') {
+        window.location.href = '/contact-en/';
+      }
     }
-  }
 
-  const savedLang = localStorage.getItem('lang');
-  if(savedLang === 'en' && window.location.pathname.includes('/contact/')) {
-    window.location.href = '/contact-en/';
-  }
-</script>
+    const savedLang = localStorage.getItem('lang');
+    if(savedLang === 'fr' && window.location.pathname.includes('/contact-en/')) {
+      window.location.href = '/contact/';
+    }
   </script>
+
 </body>
 </html>

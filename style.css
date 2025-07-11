@@ -291,3 +291,23 @@ a:hover {
 }
 
 
+/* ========== FOOTER LANGUE FR | EN ========== */
+
+.language-selector {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1rem;
+  color: white;
+  z-index: 10;
+}
+
+.language-selector a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.language-selector a:hover {
+  text-decoration: underline;
+}

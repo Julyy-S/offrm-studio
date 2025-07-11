@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,25 +15,22 @@
 
   <a href="/index.html" class="site-name">offrm studio</a>
 
-
   <div class="burger" onclick="toggleMenu()"></div>
 
   <nav class="menu" id="menu">
-    <a href="/a_propos/">à propos</a>
-    <a href="/services/">services</a>
-    <a href="/avecoffrm/">avec offrm</a>
-    <a href="/contact/">contact</a>
+    <a href="/about/">about</a>
+    <a href="/services-en/">services</a>
+    <a href="/withoffrm/">with offrM</a>
+    <a href="/contact-en/">contact</a>
   </nav>
 
   <div class="services">
-    <a href="/representation/">représentation de marques</a>
+    <a href="/representation-en/">brand representation</a>
     <span class="dot-separator"></span>
-    <a href="/curation/">curation d'événements</a>
+    <a href="/curation-en/">event curation</a>
     <span class="dot-separator"></span>
-    <a href="/production/">production audiovisuelle</a>
+    <a href="/production-en/">audiovisual production</a>
   </div>
-
-  
 
   <footer class="language-selector">
     <a href="#" onclick="setLanguage('fr')">FR</a> | 
@@ -56,13 +53,10 @@
     }
 
     const savedLang = localStorage.getItem('lang');
-    if(savedLang === 'en' && !window.location.pathname.includes('-en')) {
-      const currentPath = window.location.pathname;
-      const enPath = currentPath.replace(/\/([^\/]*)\/$/, '/$1-en/');
-      window.location.href = enPath;
+    if(savedLang === 'fr' && window.location.pathname.includes('/services-en/')) {
+      window.location.href = '/services/';
     }
   </script>
 
 </body>
 </html>
-

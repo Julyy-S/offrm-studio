@@ -36,5 +36,31 @@
     }
   </script>
 
+  <footer class="language-selector">
+    <a href="#" onclick="setLanguage('fr')">FR</a> | 
+    <a href="#" onclick="setLanguage('en')">EN</a>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    function setLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      if(lang === 'fr') {
+        window.location.href = '/production/';
+      } else if(lang === 'en') {
+        window.location.href = '/production-en/';
+      }
+    }
+
+    const savedLang = localStorage.getItem('lang');
+    if(savedLang === 'fr' && window.location.pathname.includes('/production-en/')) {
+      window.location.href = '/production/';
+    }
+  </script>
+
 </body>
 </html>

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>offrm studio – avec offrm</title>
+  <title>offrm studio – with offrm</title>
 
-  <!-- Chemins CSS corrigés -->
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/avecoffrm.css" />
   <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
@@ -17,14 +16,14 @@
   <div class="burger" onclick="toggleMenu()"></div>
 
   <nav class="menu" id="menu">
-    <a href="/a_propos/">à propos</a>
-    <a href="/services/">services</a>
-    <a href="/avecoffrm/">avec offrm</a>
-    <a href="/contact/">contact</a>
+    <a href="/about/">about</a>
+    <a href="/services-en/">services</a>
+    <a href="/withoffrm/">with offrm</a>
+    <a href="/contact-en/">contact</a>
   </nav>
 
   <div class="avec-offrm-wrapper">
-    <div class="avec-offrm-title">avec offrm</div>
+    <div class="avec-offrm-title">brands with us</div>
 
     <div class="artist-columns">
 
@@ -43,38 +42,31 @@
     </div>
   </div>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-    }
-  </script>
-
   <footer class="language-selector">
     <a href="#" onclick="setLanguage('fr')">FR</a> | 
     <a href="#" onclick="setLanguage('en')">EN</a>
   </footer>
 
-   <script>
-  function toggleMenu() {
-    const menu = document.getElementById('menu');
-    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-  }
-
-  function setLanguage(lang) {
-    localStorage.setItem('lang', lang);
-    if(lang === 'fr') {
-      window.location.href = '/avecoffrm/';
-    } else if(lang === 'en') {
-      window.location.href = '/withoffrm/';
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
     }
-  }
 
-  const savedLang = localStorage.getItem('lang');
-  if(savedLang === 'en' && window.location.pathname.includes('/avecoffrm/')) {
-    window.location.href = '/withoffrm/';
-  }
-</script>
+    function setLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      if(lang === 'fr') {
+        window.location.href = '/avecoffrm/';
+      } else if(lang === 'en') {
+        window.location.href = '/withoffrm/';
+      }
+    }
+
+    const savedLang = localStorage.getItem('lang');
+    if(savedLang === 'fr' && window.location.pathname.includes('/withoffrm/')) {
+      window.location.href = '/avecoffrm/';
+    }
+  </script>
 
 </body>
 </html>

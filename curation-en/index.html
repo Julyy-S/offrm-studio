@@ -1,42 +1,35 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>offrm studio – services</title>
+  <title>offrm studio – curation</title>
 
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/services.css">
-
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/curation.css" />
   <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
 </head>
 
-<body class="page-services">
-
+<body class="page-curation">
   <a href="/index.html" class="site-name">offrm studio</a>
-
 
   <div class="burger" onclick="toggleMenu()"></div>
 
   <nav class="menu" id="menu">
-    <a href="/a_propos/">à propos</a>
-    <a href="/services/">services</a>
-    <a href="/avecoffrm/">avec offrm</a>
-    <a href="/contact/">contact</a>
+    <a href="/about/">about</a>
+    <a href="/services-en/">services</a>
+    <a href="/withoffrm/">with offrm</a>
+    <a href="/contact-en/">contact</a>
   </nav>
 
   <div class="services">
-    <a href="/representation/">représentation de marques</a>
+    <span>event curation</span>
     <span class="dot-separator"></span>
-    <a href="/curation/">curation d'événements</a>
-    <span class="dot-separator"></span>
-    <a href="/production/">production audiovisuelle</a>
+    <span>we curate art and fashion exhibitions, live performances, pop-up experiences</span>
   </div>
 
-  
-
   <footer class="language-selector">
-    <a href="#" onclick="setLanguage('fr')">FR</a> | 
+    <a href="#" onclick="setLanguage('fr')">FR</a> |
     <a href="#" onclick="setLanguage('en')">EN</a>
   </footer>
 
@@ -49,20 +42,17 @@
     function setLanguage(lang) {
       localStorage.setItem('lang', lang);
       if(lang === 'fr') {
-        window.location.href = '/services/';
+        window.location.href = '/curation/';
       } else if(lang === 'en') {
-        window.location.href = '/services-en/';
+        window.location.href = '/curation-en/';
       }
     }
 
     const savedLang = localStorage.getItem('lang');
-    if(savedLang === 'en' && !window.location.pathname.includes('-en')) {
-      const currentPath = window.location.pathname;
-      const enPath = currentPath.replace(/\/([^\/]*)\/$/, '/$1-en/');
-      window.location.href = enPath;
+    if(savedLang === 'fr' && window.location.pathname.includes('/curation-en/')) {
+      window.location.href = '/curation/';
     }
   </script>
 
 </body>
 </html>
-
