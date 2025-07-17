@@ -28,8 +28,8 @@
     }
 
     p {
-      margin-bottom: 2rem;
-      line-height: 1.6;
+      margin-bottom: 1rem;
+      line-height: 1.5;
     }
 
     .email {
@@ -67,6 +67,21 @@
         font-size: 0.95rem;
       }
     }
+
+    @media screen and (min-width: 1600px) {
+      .one-line {
+        white-space: nowrap;
+      }
+       .content {
+        padding-left: 120px; /* au lieu de 200px par défaut */
+        padding-top: 300px;  /* ajuste ici la hauteur */
+      }
+
+      .instagram-link img {
+        width: 40px;
+        height: 40px;
+      }
+    } 
   </style>
 </head>
 
@@ -85,10 +100,9 @@
   </nav>
 
   <div class="content">
-    <p>looking for the room that doesn’t exist yet?<br>
-    maybe it starts here.</p>
+    <p class="one-line">looking for the room that doesn’t exist yet? maybe it starts here.</p>
 
-    <p>for all inquiries, collaborations, or ideas waiting to unfold, please reach out.</p>
+    <p class="one-line">for all inquiries, collaborations, or ideas waiting to unfold, please reach out.</p>
 
     <p class="email">
       <strong><a href="mailto:info@offrmstudio.com">info@offrmstudio.com</a></strong>
