@@ -48,7 +48,8 @@ body.page-curation {
 .page-curation .menu a,
 .page-curation .language-selector,
 .page-curation .language-selector a,
-.page-curation .circle-o {
+.page-curation .circle-o,
+.page-curation .copyright {
   color: black !important;
   background-color: transparent !important;
 }

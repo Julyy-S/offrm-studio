@@ -49,7 +49,8 @@ body.page-representation {
 .page-representation .menu a,
 .page-representation .language-selector,
 .page-representation .language-selector a,
-.page-representation.circle-o {
+.page-representation .circle-o,
+.page-representation .copyright {
   color: black !important;
   background-color: transparent !important;
 }

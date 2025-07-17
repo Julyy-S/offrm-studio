@@ -28,8 +28,8 @@
     }
 
     p {
-      margin-bottom: 2rem;
-      line-height: 1.6;
+      margin-bottom: 1rem;
+      line-height: 1.5;
     }
 
     .email {
@@ -68,6 +68,22 @@
         font-size: 0.95rem;
       }
     }
+
+    @media screen and (min-width: 1600px) {
+      .one-line {
+        white-space: nowrap;
+      }
+       .content {
+        padding-left: 120px; /* au lieu de 200px par défaut */
+        padding-top: 300px;  /* ajuste ici la hauteur */
+      }
+
+      .instagram-link img {
+        width: 40px;
+        height: 40px;
+      }
+    } 
+
   </style>
 </head>
 
@@ -86,10 +102,9 @@
   </nav>
 
   <div class="content">
-    <p>vous recherchez la pièce qui n'existe pas encore?<br>
-    peut-être que tout commence ici.</p>
+    <p class="one-line">vous recherchez la pièce qui n'existe pas encore? peut-être que tout commence ici.</p>
 
-    <p>pour toute information, collaborations ou idées prêtes à être réalisées, merci de nous contacter.</p>
+    <p class="one-line">pour toute information, collaborations ou idées prêtes à être réalisées, merci de nous contacter.</p>
 
     <p class="email">
       <strong><a href="mailto:info@offrmstudio.com">info@offrmstudio.com</a></strong>
@@ -110,10 +125,12 @@
     }
   </script>
 
-<footer class="language-selector">
-    <a href="#" onclick="setLanguage('fr')">FR</a> | 
-    <a href="#" onclick="setLanguage('en')">EN</a>
-  </footer>
+  <div class="footer-bar">
+  <div class="copyright">© offrm studio. 2025. Tous droits réservés.</div>
+  <div class="language-selector">
+    <a href="#" onclick="setLanguage('fr')">fr</a> | 
+    <a href="#" onclick="setLanguage('en')">en</a>
+  </div>
 
   <script>
   function toggleMenu() {
