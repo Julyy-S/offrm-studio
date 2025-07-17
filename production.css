@@ -1,5 +1,11 @@
 /* === STYLES SPÉCIFIQUES À LA PAGE PRODUCTION === */
 
+.page-production {
+  background-color: white;
+  color: black;
+}
+
+
 body.page-production {
   position: relative;
   overflow: hidden;
@@ -11,16 +17,17 @@ body.page-production {
   align-items: center;
   justify-content: center;
   flex-direction: row; /* ✅ Desktop : horizontal */
-  padding: 3rem 1rem;
+  padding: 3rem 1rem 2rem 0rem;
   text-align: center;
   gap: 1rem;
 }
 
 .dot-separator {
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: white;
+  width: 20px;
+  height: 20px;
+  aspect-ratio: 1 / 1;
+  background-color: black;
   border-radius: 50%;
   margin: 0 0.5rem; /* Espace horizontal desktop */
   vertical-align: middle;
@@ -30,6 +37,38 @@ body.page-production {
   font-size: 1rem;
 }
 
+.page-production .services,
+.page-production .services * {
+  color: black;
+}
+
+/* Production – inverser couleurs globales */
+
+.page-production .site-name,
+.page-production .burger,
+.page-production .menu a,
+.page-production .language-selector,
+.page-production .language-selector a,
+.page-production .circle-o {
+  color: black !important;
+  background-color: transparent !important;
+}
+
+.page-production .burger {
+  background-color: black !important;
+}
+
+.page-production .menu {
+  background: rgba(255, 255, 255, 0.8); /* menu légèrement opaque blanc */
+  border: 1px solid black;
+}
+
+.page-production .menu a:hover {
+  color: black;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+
 @media (max-width: 768px) {
 
   .page-production .services {
@@ -37,7 +76,7 @@ body.page-production {
     transform: none;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 1rem 1rem 2rem 1rem;  /* ✅ Texte plus haut */
+    padding: 1rem 1rem 2rem 1rem;  /* ✅ place du texte */
     text-align: center;
   }
 
@@ -52,3 +91,27 @@ body.page-production {
     margin: 0.5rem 0;
   }
 }
+
+
+@media screen and (min-width: 1024px) {
+  .page-production .services span {
+    font-size: 1.3rem;
+  }
+}
+
+
+@media screen and (min-width: 1440px) {
+  .page-production .services span {
+    font-size: 1.8rem;
+  }
+}
+
+
+
+@media screen and (min-width: 1600px) {
+  .page-production .services span {
+    font-size: 2.2rem;
+  }
+}
+
+

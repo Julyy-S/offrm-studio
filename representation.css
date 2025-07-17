@@ -18,8 +18,9 @@ body.page-representation {
 
 .dot-separator {
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
+  aspect-ratio: 1 / 1;
   background-color: white;
   border-radius: 50%;
   margin: 0 0.5rem; /* ✅ Meilleur espacement horizontal pour desktop */
@@ -52,3 +53,29 @@ body.page-representation {
     margin: 0.5rem 0; /* ✅ espacement vertical pour mobile */
   }
 }
+
+.page-representation .services span {
+  font-size: 1rem;
+}
+
+/* Taille sur desktop normaux */
+@media screen and (min-width: 1024px) {
+  .page-representation .services span {
+    font-size: 1.3rem;
+  }
+}
+
+/* Taille sur grands écrans */
+@media screen and (min-width: 1440px) {
+  .page-representation .services span {
+    font-size: 1.8rem;
+  }
+}
+
+/* Taille sur très grands écrans */
+@media screen and (min-width: 1600px) {
+  .page-representation .services span {
+    font-size: 2.2rem;
+  }
+}
+

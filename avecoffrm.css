@@ -51,3 +51,33 @@
     font-size: 0.8rem;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .avec-offrm-title {
+    font-size: 2rem;
+  }
+
+  .artist-columns {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .avec-offrm-wrapper {
+    padding-top: 450px; /* Augmente ici pour baisser tout le bloc */
+  }
+
+  .avec-offrm-title {
+    font-size: 3.5rem;
+  }
+
+  .artist-columns {
+    font-size: 2.5rem;
+    gap: 100px; /* un peu plus d'espace entre les colonnes */
+  }
+
+  .artist-column div {
+    line-height: 2.5; /* plus d'espace vertical entre les artistes */
+  }
+}
+

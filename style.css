@@ -7,7 +7,7 @@ body {
   font-family: 'Asap', sans-serif;
   font-weight: 300;
   text-transform: lowercase;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 /* Optionnel : si une page veut centrer verticalement */
@@ -16,6 +16,37 @@ body.flex-centered {
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+/* ========== Page home ========== */
+
+.page-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  font-family: 'Asap', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+.texte-offrm {
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+  font-weight: normal;
+}
+.circle-o {
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  background-color: white;
+  border-radius: 50%;
 }
 
 /* ========== LIENS ========== */
@@ -96,6 +127,30 @@ a:hover {
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
 }
 
+@media screen and (min-width: 1024px) {
+  .burger {
+    width: 30px;
+    height: 30px;
+  }
+  .menu a {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .burger {
+    width: 60px;
+    height: 60px;
+  }
+  .menu a {
+    font-size: 2rem;
+    padding: 12px 0; /* vertical : plus de hauteur entre les liens */
+  }
+  .menu {
+    top: 80px; 
+  }
+}
+
 /* Logo "o" rempli */
 
 .logo {
@@ -127,11 +182,12 @@ a:hover {
 .page-production .site-name,
 .page-representation .site-name,
 .page-curation .site-name,
-.page-contact .site-name {
+.page-contact .site-name,
+.page-avecoffrm .site-name {
   position: fixed;
   top: 20px;
   left: 20px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-transform: lowercase;
   font-family: 'Asap', sans-serif;
   font-weight: 300;
@@ -139,10 +195,42 @@ a:hover {
   z-index: 12;
 }
 
-.page-a-propos p {
-  font-size: 0.95rem;
-  line-height: 1.6;
+@media screen and (min-width: 1024px) {
+  .page-a-propos .wrapper {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .page-a-propos .image-side {
+    flex: 0 0 50%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .page-a-propos .image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .page-a-propos .text-side {
+    flex: 1;
+    padding: 3rem;
+    overflow-y: auto;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 6vh;
+  }
+
+  .page-contact .content {
+    font-size: 1.3rem;
+  }
 }
+
 
 .page-production {
   position: relative;
@@ -231,6 +319,31 @@ a:hover {
   z-index: 3;
 }
 
+
+
+/* ========== FOOTER LANGUE FR | EN ========== */
+
+.language-selector {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1rem;
+  color: white;
+  z-index: 10;
+}
+
+.language-selector a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.language-selector a:hover {
+  text-decoration: underline;
+}
+
+/* ========== Mobile screens ========== */
+
 @media screen and (max-width: 768px) {
   .page-a-propos {
     background-image: url("CJ_gris.jpg");
@@ -254,7 +367,7 @@ a:hover {
 
   .page-a-propos .text-side {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1.8;
     max-width: 90%;
     margin: 0 auto;
@@ -290,24 +403,69 @@ a:hover {
   }
 }
 
+/* ========== Desktop screens ========== */
 
-/* ========== FOOTER LANGUE FR | EN ========== */
+@media screen and (min-width: 1024px) {
+  .page-a-propos .image-side {
+    height: 100vh;
+  }
 
-.language-selector {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 1rem;
-  color: white;
-  z-index: 10;
+  .page-a-propos .image-side img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .language-selector {
+    font-size: 1.3rem; /* ✅ agrandi sur desktop uniquement */
+  }
+
+  .page-contact .content {
+    margin-top: 0vh; /* ajuste cette valeur à ta convenance */
+  }
+
+  .page-home .texte-offrm {
+    font-size: 3rem;
+  }
 }
 
-.language-selector a {
-  color: white;
-  text-decoration: none;
-  margin: 0 5px;
-}
 
-.language-selector a:hover {
-  text-decoration: underline;
+/* ========== Bigger screens ========== */
+
+@media screen and (min-width: 1600px) {
+  .page-a-propos .text-side {
+    font-size: 2rem;
+    margin-top: 5vh;
+  }
+  .page-services .site-name,
+  .page-a-propos .site-name,
+  .page-production .site-name,
+  .page-representation .site-name,
+  .page-curation .site-name,
+  .page-contact .site-name,
+  .page-avecoffrm .site-name,
+  .page-standard .site-name {
+    font-size: 2.8rem;
+  }
+
+  .language-selector {
+    font-size: 2.5rem;
+  }
+
+  .page-contact .content {
+    font-size: 2.5rem;
+    margin-top: 2vh;
+  }
+
+  .instagram-handle {
+    font-size: 2rem;
+  }
+
+  .instagram-link img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .page-home .texte-offrm {
+    font-size: 4rem;
+  }
 }

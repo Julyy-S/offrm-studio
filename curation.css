@@ -18,8 +18,9 @@ body.page-curation {
 
 .dot-separator {
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
+  aspect-ratio: 1 / 1;
   background-color: white;
   border-radius: 50%;
   margin: 0 0.5rem; /* Espace horizontal pour desktop */
@@ -51,5 +52,17 @@ body.page-curation {
     width: 8px;
     height: 8px;
     margin: 0.5rem 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .page-curation .services span {
+    font-size: 1.3rem; /* même que les autres pages sur desktop normal */
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .page-curation .services span {
+    font-size: 2.4rem; /* pour grands écrans */
   }
 }
