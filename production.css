@@ -97,6 +97,9 @@ body.page-production {
   .page-production .services span {
     font-size: 1.3rem;
   }
+  .page-production .services {
+    padding-left: 1rem; /* Ajoute ceci ou ajuste légèrement cette valeur */
+  }
 }
 
 

@@ -1,5 +1,10 @@
 /* === STYLES SPÉCIFIQUES À LA PAGE CURATION === */
 
+.page-curation {
+  background-color: white;
+  color: black;
+}
+
 body.page-curation {
   position: relative;
   overflow: hidden;
@@ -21,7 +26,7 @@ body.page-curation {
   width: 20px;
   height: 20px;
   aspect-ratio: 1 / 1;
-  background-color: white;
+  background-color: black;
   border-radius: 50%;
   margin: 0 0.5rem; /* Espace horizontal pour desktop */
   vertical-align: middle;
@@ -29,6 +34,37 @@ body.page-curation {
 
 .page-curation .services span {
   font-size: 1rem;
+}
+
+.page-curation .services,
+.page-curation .services * {
+  color: black;
+}
+
+/* Curation – inverser couleurs globales */
+
+.page-curation .site-name,
+.page-curation .burger,
+.page-curation .menu a,
+.page-curation .language-selector,
+.page-curation .language-selector a,
+.page-curation .circle-o {
+  color: black !important;
+  background-color: transparent !important;
+}
+
+.page-curation .burger {
+  background-color: black !important;
+}
+
+.page-curation .menu {
+  background: rgba(255, 255, 255, 0.8); /* menu légèrement opaque blanc */
+  border: 1px solid black;
+}
+
+.page-curation .menu a:hover {
+  color: black;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 
