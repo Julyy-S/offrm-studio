@@ -38,7 +38,7 @@
   }
 
   .avec-offrm-title {
-    font-size: 1.2rem; /* Réduit un peu le titre */
+    font-size: 1.4rem;
   }
 
   .artist-columns {
@@ -48,7 +48,11 @@
   }
 
     .artist-column div {
-    font-size: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .page-avecoffrm .site-name {
+    font-size: 1.5rem;
   }
 }
 
