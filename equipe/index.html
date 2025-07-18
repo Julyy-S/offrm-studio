@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>équipe – Offrm Studio</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../equipe.css">
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body class="page-equipe">
+    <a href="/index.html" class="site-name">offrm studio</a>
+
+
+  <div class="burger" onclick="toggleMenu()"></div>
+
+  <nav class="menu" id="menu">
+    <a href="/a_propos/">à propos</a>
+    <a href="/equipe/">l'équipe</a>
+    <a href="/services/">services</a>
+    <a href="/avecoffrm/">avec offrm</a>
+    <a href="/contact/">contact</a>
+  </nav>
+  
+  <!-- Section 1 : Charlène -->
+  <section class="section-equipe">
+    <img src="charly.jpg" alt="Charlène Bolou">
+    <div class="texte">
+      <h2>Charlène Bolou <span class="dot-centered"></span> Co-fondatrice d'Offrm</h2>
+      <p>Réalisatrice et productrice, elle imagine les récits du studio et veille à leur cohérence artistique et culturelle, de l'idée à la diffusion.</p>
+    </div>
+  </section>
+
+  <!-- Section 2 : Julie -->
+  <section class="section-equipe reverse">
+    <img src="july.jpg" alt="Julie Sauliere">
+    <div class="texte">
+      <h2>Julie Sauliere <span class="dot-centered"></span> Co-fondatrice d'Offrm</h2>
+      <p>Directrice artistique et productrice, elle pilote la vision créative du studio et accompagne le développement de chaque projet.</p>
+    </div>
+  </section>
+
+  <!-- Section 3 : Amira -->
+  <section class="section-equipe">
+    <img src="amira.jpg" alt="Amira A Gama">
+    <div class="texte">
+      <h2>Amira A Gama <span class="dot-centered"></span> Designer et artiste</h2>
+      <p>Scénographe des expositions du studio, elle conçoit des espaces où chaque œuvre dialogue avec la matière, la lumière et l'intention.</p>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <div class="footer-bar">
+  <div class="copyright">© 2025 offrm studio</div>
+  <div class="language-selector">
+    <a href="#" onclick="setLanguage('fr')">FR</a> | 
+    <a href="#" onclick="setLanguage('en')">EN</a>
+  </div>
+</div>
+
+
+
+  <script>
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+  }
+
+  function setLanguage(lang) {
+    localStorage.setItem('lang', lang);
+    if(lang === 'fr') {
+      window.location.href = '/equipe/';
+    } else if(lang === 'en') {
+      window.location.href = '/members/';
+    }
+  }
+
+  const savedLang = localStorage.getItem('lang');
+  if(savedLang === 'fr' && window.location.pathname.includes('/members/')) {
+    window.location.href = '/equipe/';
+  }
+  if(savedLang === 'en' && window.location.pathname.includes('/equipe/')) {
+    window.location.href = '/members/';
+  }
+</script>
+
+</body>
+</html>

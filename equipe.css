@@ -1,0 +1,137 @@
+/* PAGE EQUIPE – FOND BLANC, TEXTE NOIR */
+body.page-equipe {
+  background-color: white;
+  color: black;
+  font-family: 'Asap', sans-serif;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+}
+
+/* CONTENU DE LA PAGE – STRUCTURE DES SECTIONS */
+.section-equipe {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-equipe.reverse {
+  flex-direction: row-reverse;
+}
+
+.section-equipe img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+
+.section-equipe .texte {
+  max-width: 500px;
+}
+
+.section-equipe .texte h2 {
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.section-equipe .texte p {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+
+
+/* COULEURS SPÉCIFIQUES : LOGO, MENU, FOOTER EN NOIR SUR BLANC */
+.page-equipe .site-name,
+.page-equipe .burger,
+.page-equipe .menu a,
+.page-equipe .language-selector,
+.page-equipe .language-selector a,
+.page-equipe .circle-o,
+.page-equipe .copyright {
+  color: black !important;
+  background-color: transparent !important;
+}
+
+.page-equipe .burger {
+  background-color: black !important;
+}
+
+.page-equipe .menu {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+}
+
+.page-equipe .menu a:hover {
+  color: black;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.dot-centered {
+  display: inline-block;
+  width: 0.4em;
+  height: 0.4em;
+  background-color: currentColor;
+  border-radius: 50%;
+  margin: 0 0.6em;
+  vertical-align: middle;
+  position: relative;
+  top: -0.05em; /* ajuste légèrement la position verticale */
+}
+
+
+/* RÉPONSE AUX ÉCRANS MOBILES */
+
+@media screen and (max-width: 768px) {
+  .section-equipe {
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 1rem;
+    text-align: center;
+    margin-top: 5rem;
+  }
+
+  body.page-equipe {
+    padding-bottom: 5rem;
+  }
+  
+  .section-equipe.reverse {
+    flex-direction: column;
+  }
+
+  .section-equipe img {
+    max-width: 50vw;
+    height: auto;
+  }
+
+  .section-equipe .texte p {
+    font-size: 0.9rem;
+  }
+
+  .section-equipe .texte h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .section-equipe .texte h2 {
+    font-size: 1.9rem;
+  }
+
+  .section-equipe .texte p {
+    font-size: 1.7rem;
+  }
+
+  body.page-equipe {
+    padding-top: 5rem;
+  }
+}
+

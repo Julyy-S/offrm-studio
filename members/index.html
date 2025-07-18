@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>équipe – Offrm Studio</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../equipe.css">
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body class="page-equipe">
+    <a href="/index.html" class="site-name">offrm studio</a>
+
+
+  <div class="burger" onclick="toggleMenu()"></div>
+
+  <nav class="menu" id="menu">
+    <a href="/about/">about</a>
+    <a href="/members/">members</a>
+    <a href="/services-en/">services</a>
+    <a href="/withoffrm/">with offrm</a>
+    <a href="/contact-en/">contact</a>
+  </nav>
+  
+  <!-- Section 1 : Charlène -->
+  <section class="section-equipe">
+    <img src="charly.jpg" alt="Charlène Bolou">
+    <div class="texte">
+      <h2>Charlène Bolou <span class="dot-centered"></span> offrm co-founder</h2>
+      <p>filmmaker and producer, she crafts the studio's narratives and ensures their artistic and cultural coherence from concept to delivery.</p>
+    </div>
+  </section>
+
+  <!-- Section 2 : Julie -->
+  <section class="section-equipe reverse">
+    <img src="july.jpg" alt="Julie Sauliere">
+    <div class="texte">
+      <h2>Julie Sauliere <span class="dot-centered"></span> offrm co-founder</h2>
+      <p>artistic director and producer, she leads the studio's creative vision and oversees the development of each project.</p>
+    </div>
+  </section>
+
+  <!-- Section 3 : Amira -->
+  <section class="section-equipe">
+    <img src="amira.jpg" alt="Amira A Gama">
+    <div class="texte">
+      <h2>Amira A Gama <span class="dot-centered"></span> designer & metal craft artist</h2>
+      <p>exhibition scenographer for the studio, she designs spaces where each piece interacts with material, light, and intention.</p>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <div class="footer-bar">
+  <div class="copyright">© 2025 offrm studio</div>
+  <div class="language-selector">
+    <a href="#" onclick="setLanguage('fr')">FR</a> | 
+    <a href="#" onclick="setLanguage('en')">EN</a>
+  </div>
+</div>
+
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+  }
+
+  function setLanguage(lang) {
+    localStorage.setItem('lang', lang);
+    if(lang === 'fr') {
+      window.location.href = '/equipe/';
+    } else if(lang === 'en') {
+      window.location.href = '/members/';
+    }
+  }
+
+  const savedLang = localStorage.getItem('lang');
+  if(savedLang === 'fr' && window.location.pathname.includes('/members/')) {
+    window.location.href = '/equipe/';
+  }
+  if(savedLang === 'en' && window.location.pathname.includes('/equipe/')) {
+    window.location.href = '/members/';
+  }
+</script>
+
+</body>
+</html>
