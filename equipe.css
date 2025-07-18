@@ -36,8 +36,8 @@ body.page-equipe {
 
 .section-equipe .texte h2 {
   font-weight: 600;
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.9rem;
 }
 
 .section-equipe .texte p {
@@ -117,7 +117,7 @@ body.page-equipe {
   }
 
   .section-equipe .texte h2 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -133,5 +133,9 @@ body.page-equipe {
   body.page-equipe {
     padding-top: 5rem;
   }
-}
 
+  .section-equipe .texte {
+  max-width: 650px;
+  word-break: break-word;
+  }
+}
