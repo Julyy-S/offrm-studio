@@ -185,7 +185,6 @@ a:hover {
 .page-contact .site-name,
 .page-avecoffrm .site-name,
 .page-equipe .site-name,
-.page-production-test .site-name,
 .page-projet-lldc .site-name,
 .page-projet-sonsoee .site-name {
   position: fixed;
@@ -323,6 +322,11 @@ a:hover {
   z-index: 3;
 }
 
+.page-contact .youtube-link img {
+    width: 30px;
+    height: 30px;
+  }
+
 
 
 /* ========== FOOTER LANGUE FR | EN ========== */
@@ -418,6 +422,10 @@ a:hover {
   .copyright {
     font-size: 0.6rem;
   }
+
+  .page-contact .youtube-handle {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -476,7 +484,6 @@ a:hover {
   .page-standard .site-name,
   .page-equipe .site-name,
   .page-projet-lldc .site-name,
-  .page-production-test .site-name,
   .page-projet-sonsoee .site-name {
     font-size: 2.8rem;
   }
@@ -494,9 +501,18 @@ a:hover {
     font-size: 2rem;
   }
 
+  .youtube-handle {
+    font-size: 2.5rem;
+  } 
+
   .instagram-link img {
     width: 50px;
     height: 50px;
+  }
+
+  .youtube-link img {
+    width: 60px;
+    height: 60px;
   }
 
   .page-home .texte-offrm {
