@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LLDC – offrm studio</title>
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/lldc.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body class="page-projet-lldc">
+  <a href="/index.html" class="site-name">offrm studio</a>
+
+  <div class="burger" onclick="toggleMenu()"></div>
+
+  <nav class="menu" id="menu">
+    <a href="/a_propos/">à propos</a>
+    <a href="/equipe/">l'équipe</a>
+    <a href="/services/">services</a>
+    <a href="/avecoffrm/">avec offrm</a>
+    <a href="/contact/">contact</a>
+  </nav>
+
+  <main class="projet-wrapper">
+    <div class="projet-texte">
+      <h1>COURT-METRAGE “LES LIENS DU CŒUR” (15’)</h1>
+      <h2>un film de Charlène Bolou</h2>
+
+      <p><strong>année</strong> 2024</p>
+      <p><strong>par offrm</strong> réalisation, direction artistique, développement, casting</p>
+      <p><strong>crédits</strong> produit par Unobvious Films & Persée Production | d.o.p Jolan Pery | avec Manon BRESCH & Yoo Yujin</p>
+    </div>
+
+    <div class="projet-bottom">
+  <div class="projet-image">
+    <img src="lldc.png" alt="Image du court-métrage LLDC">
+  </div>
+
+  <div class="projet-synopsis">
+    <h3>synopsis :</h3>
+    <p>
+      Au-delà de leurs différences, Charlie et Yujin forment un duo inséparable et partagent absolument tout : leurs univers, leurs rêves, leur chambre et tous ces petits instants précieux de la vie, qu’ils soient heureux ou tristes…
+    </p>
+  </div>
+</div>
+
+    <div class="projet-image-full">
+  <img src="lldc2.png" alt="Seconde image du projet LLDC">
+</div>
+
+    <div class="projet-grid">
+  <div><img src="lldc3.png" alt="Image 3"></div>
+  <div><img src="lldc4.png" alt="Image 4"></div>
+  <div><img src="lldc5.png" alt="Image 5"></div>
+  <div><img src="lldc6.png" alt="Image 6"></div>
+</div>
+
+    <div class="projet-image-full">
+  <img src="lldc7.png" alt="Image finale LLDC">
+</div>
+
+  <div class="retour-production">
+    <a href="/production/" class="btn-retour">← retour production</a>
+  </div>
+</main>
+
+  <div class="footer-bar">
+    <div class="copyright">© 2025 offrm studio. Tous droits réservés.</div>
+    <div class="language-selector">
+      <a href="#" onclick="setLanguage('fr')">fr</a> | 
+      <a href="#" onclick="setLanguage('en')">en</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    function setLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      if(lang === 'fr') {
+        window.location.href = '/projets/lldc/';
+      } else if(lang === 'en') {
+        window.location.href = '/projets/lldc/en/';
+      }
+    }
+
+    const savedLang = localStorage.getItem('lang');
+    if(savedLang === 'fr' && window.location.pathname.includes('/projets/lldc/en/')) {
+      window.location.href = '/projets/lldc/';
+    }
+  </script>
+</body>
+</html>

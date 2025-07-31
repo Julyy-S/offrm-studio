@@ -1,4 +1,4 @@
-/* === STYLES SPÉCIFIQUES À LA PAGE PRODUCTION === */
+/* ======== STYLES DE BASE POUR PRODUCTION-TEST ======== */
 
 .page-production {
   background-color: white;
@@ -7,50 +7,41 @@
 
 
 body.page-production {
-  position: relative;
-  overflow: hidden;
+  background-color: white;
+  color: black;
+  font-family: 'Asap', sans-serif;
+  font-weight: 300;
+  margin: 0;
 }
 
-.page-production .services {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row; /* ✅ Desktop : horizontal */
-  padding: 3rem 1rem 2rem 0rem;
+/* Paragraphe de texte centré */
+.intro-texte {
+  max-width: 900px;
+  margin: 8rem auto 4rem auto;
+  padding: 0 2rem;
   text-align: center;
-  gap: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.8;
 }
 
-.dot-separator {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  aspect-ratio: 1 / 1;
+.intro-point {
+  width: 0.45em;
+  height: 0.45em;
   background-color: black;
   border-radius: 50%;
-  margin: 0 0.5rem; /* Espace horizontal desktop */
-  vertical-align: middle;
+  display: inline-block;
+  position: relative;
+  top: -0.1em;
 }
 
-.page-production .services span {
-  font-size: 1rem;
-}
-
-.page-production .services,
-.page-production .services * {
-  color: black;
-}
-
-/* Production – inverser couleurs globales */
-
+/* Logo, menu, langues — en noir */
 .page-production .site-name,
 .page-production .burger,
+.page-production .menu,
 .page-production .menu a,
+.page-production .copyright,
 .page-production .language-selector,
-.page-production .language-selector a,
-.page-production .circle-o,
-.page-production .copyright {
+.page-production .language-selector a {
   color: black !important;
   background-color: transparent !important;
 }
@@ -60,62 +51,220 @@ body.page-production {
 }
 
 .page-production .menu {
-  background: rgba(255, 255, 255, 0.8); /* menu légèrement opaque blanc */
+  background: rgba(255, 255, 255, 0.8);
   border: 1px solid black;
 }
 
 .page-production .menu a:hover {
-  color: black;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 
-@media (max-width: 768px) {
 
-  .page-production .services {
-    position: static;
-    transform: none;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 1rem 1rem 2rem 1rem;  /* ✅ place du texte */
-    text-align: center;
-  }
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
 
-  .page-production .services span {
-    font-size: 1rem;
-    text-align: center;
-  }
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 2rem;
+  scroll-behavior: smooth;
+  scroll-padding: 1rem;
+  max-width: 90vw;
+  padding: 1rem 0;
+}
 
-  .dot-separator {
-    width: 8px;
-    height: 8px;
-    margin: 0.5rem 0;
-  }
+.carousel-slide {
+  position: relative; /* ✅ nécessaire pour positionner le caption */
+  width: 260px;
+  height: 360px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f0f0f0;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* centre horizontalement tous les enfants */
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.slide-caption p {
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+}
+
+.btn-view {
+  background: white;
+  color: black;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  text-decoration: none;
+  width: fit-content;
+  transition: background 0.3s ease;
+}
+
+.btn-view:hover {
+  background: #ddd;
+}
+
+.carousel-nav {
+  background: white;
+  color: black;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.carousel-nav:hover {
+  background: #f5f5f5;
 }
 
 
-@media screen and (min-width: 1024px) {
-  .page-production .services span {
-    font-size: 1.3rem;
+
+@media screen and (min-width: 769px) {
+  .intro-ligne-1,
+  .intro-ligne-2 {
+    margin: 0;
   }
-  .page-production .services {
-    padding-left: 1rem; /* Ajoute ceci ou ajuste légèrement cette valeur */
+
+  .intro-ligne-1 {
+    margin-bottom: 0rem;
+  }
+
+  .intro-point {
+    margin: 1rem;
+  }
+
+  .intro-ligne-2 {
+    margin-top: -1rem;
   }
 }
+
 
 
 @media screen and (min-width: 1440px) {
-  .page-production .services span {
-    font-size: 1.8rem;
+  .carousel-slide {
+    width: 340px;
+    height: 460px;
+  }
+
+  .carousel {
+    gap: 3rem;
+  }
+
+  .slide-caption p {
+    font-size: 1.2rem;
+  }
+
+  .btn-view {
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+  }
+
+   .intro-texte {
+    font-size: 1.4rem;
+    line-height: 2;
   }
 }
 
 
+@media screen and (max-width: 768px) {
 
-@media screen and (min-width: 1600px) {
-  .page-production .services span {
-    font-size: 2.2rem;
+  .intro-texte {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .intro-ligne-1,
+  .intro-ligne-2 {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0.8rem 0;
+  }
+
+  /* texte aligné et centré !!! */
+  .intro-ligne-2 {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .intro-point {
+    display: block;
+    margin: 1.2rem auto;
+  }
+
+  .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: transparent;
+    opacity: 1;
+    padding: 0;           /* supprime l’espace blanc autour */
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .carousel-nav.left {
+    left: 1rem;
+  }
+
+  .carousel-nav.right {
+    right: 1rem;
+  }
+  .carousel-nav:hover {
+  opacity: 0.5;
+  }
+
+  .page-production .menu {
+    background-color: rgba(255, 255, 255, 0.8); /* fond blanc semi-transparent */
+    border: 1px solid black;
+    backdrop-filter: blur(4px); /* optionnel : flou pour lisibilité */
+  }
+
+  .page-production .menu a {
+    color: black;
+  }
+
+  .page-production .menu a:hover {
+    color: black;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   }
 }
-
-

@@ -1,0 +1,276 @@
+.page-projet-lldc {
+  background-color: white;
+  color: black;
+  font-family: 'Asap', sans-serif;
+  font-weight: 300;
+  padding: 2rem;
+  margin: 0;
+}
+
+.page-projet-lldc .site-name,
+.page-projet-lldc .burger,
+.page-projet-lldc .menu a,
+.page-projet-lldc .language-selector,
+.page-projet-lldc .language-selector a,
+.page-projet-lldc .copyright {
+  color: black !important;
+  background-color: transparent !important;
+}
+
+.page-projet-lldc .burger {
+  background-color: black !important;
+}
+
+.page-projet-lldc .menu {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+}
+
+.page-projet-lldc .menu a:hover {
+  color: black;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.projet-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-top: 6rem;
+  padding-bottom: 5rem; 
+}
+
+.projet-texte h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+  text-transform: none;
+}
+
+.projet-texte h2 {
+  font-size: 1.1rem;
+  font-weight: normal;
+  margin-bottom: 2rem;
+}
+
+.projet-texte p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  display: flex;
+  gap: 1rem; /* ou plus si tu veux élargir l'espace */
+}
+
+.projet-texte strong {
+  font-weight: bold;
+  display: inline-block;
+  width: 80px;
+}
+
+.projet-synopsis {
+  margin-top: 2rem;
+}
+
+.projet-synopsis h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.projet-synopsis p {
+  line-height: 1.6;
+}
+
+.projet-image {
+  flex: 1;
+}
+
+
+.projet-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
+.projet-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.projet-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  object-fit: cover;
+}
+
+
+.projet-synopsis {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+}
+
+.projet-image-full {
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.projet-image-full img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.projet-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 4rem 0;
+}
+
+.projet-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.retour-production {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.btn-retour {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-retour:hover {
+  background-color: #333;
+  color: white;
+}
+
+
+@media screen and (max-width: 768px) {
+  /* Repositionner synopsis sous le texte */
+  .projet-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .projet-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .projet-synopsis {
+    order: 2;
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: justify;
+  }
+
+  .projet-image {
+    order: 1;
+    width: 100%;
+    margin-bottom: 1.5rem; /* 👈 réduit espace sous image LLDC */
+  }
+
+  .projet-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+
+  /* Rendre la grille verticale */
+  .projet-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: -6rem;
+    margin-bottom: -5rem; /* 👈 réduit espace sous bloc 4 images */
+  }
+
+  .projet-grid img {
+    width: 100%;
+    height: auto;
+  }
+
+  .projet-image-full {
+    margin-top: -1rem; /* 👈 réduit espace au-dessus de lldc2 et lldc7 */
+  }
+
+  .projet-texte p {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .projet-texte p strong {
+    width: auto;
+  }
+}
+
+
+
+@media screen and (min-width: 1600px) {
+  body {
+    font-size: 1.3rem;
+  }
+
+  .projet-texte h1 {
+    font-size: 3rem;
+  }
+
+  .projet-texte h2 {
+    font-size: 1.5rem;
+  }
+
+  .projet-synopsis h2 {
+    font-size: 1.5rem;
+  }
+
+  .projet-synopsis p,
+  .projet-texte p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    text-align: justify;
+  }
+  
+  .projet-texte p {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 3rem;
+  }
+
+  .projet-texte p strong {
+    white-space: nowrap;
+  }
+
+  .projet-bottom {
+    align-items: center;
+  }
+  
+}
+
+

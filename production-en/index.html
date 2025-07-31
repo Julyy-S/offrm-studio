@@ -6,7 +6,7 @@
   <title>offrm studio – production</title>
 
   <link rel="stylesheet" href="/style.css" />
-  <link rel="stylesheet" href="/production.css" />
+  <link rel="stylesheet" href="../production.css" />
   <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
 </head>
 
@@ -23,17 +23,56 @@
     <a href="/contact-en/">contact</a>
   </nav>
 
-  <div class="services">
-    <span>audiovisual production</span>
-    <span class="dot-separator"></span>
-    <span>we produce art films, brand films, music videos, series, documentaries, lookbooks and editorials</span>
+
+ <div class="intro-texte">
+  <p class="intro-ligne-1">audiovisual production</p>
+  <div class="intro-point"></div>
+  <p class="intro-ligne-2">
+    we produce art films, brand films, music videos, series, documentaries, lookbooks and editorials.
+  </p>
+</div>
+
+
+  <div class="carousel-container">
+  <button class="carousel-nav left" onclick="scrollCarousel(-1)">‹</button>
+
+  <div class="carousel" id="carousel">
+    <div class="carousel-slide">
+      <img src="LLDC.jpg" alt="LLDC">
+      <div class="slide-caption">
+        <p>short movie, 2024</p>
+        <a href="/projets/lldc/en/" class="btn-view">view more</a>
+      </div>
+    </div>
+
+    <div class="carousel-slide">
+      <img src="sonsoee-project.jpg" alt="sonsoee">
+      <div class="slide-caption">
+        <p>sonsoee S/S lookbook, 2025</p>
+        <a href="/projets/sonsoee/en/" class="btn-view">view more</a>
+      </div>
+    </div>
   </div>
 
+  <button class="carousel-nav right" onclick="scrollCarousel(1)">›</button>
+</div>
+
+
+
+  <script>
+    function scrollCarousel(direction) {
+      const carousel = document.getElementById('carousel');
+      const slideWidth = carousel.querySelector('.carousel-slide').offsetWidth + 32;
+      carousel.scrollBy({ left: slideWidth * direction, behavior: 'smooth' });
+    }
+  </script>
+
   <div class="footer-bar">
-  <div class="copyright">© 2025 offrm studio. All rights reserved.</div>
-  <div class="language-selector">
-    <a href="#" onclick="setLanguage('fr')">fr</a> | 
-    <a href="#" onclick="setLanguage('en')">en</a>
+    <div class="copyright">© 2025 offrm studio. All rights reserved.</div>
+    <div class="language-selector">
+      <a href="#" onclick="setLanguage('fr')">fr</a> | 
+      <a href="#" onclick="setLanguage('en')">en</a>
+    </div>
   </div>
 
   <script>
@@ -44,18 +83,17 @@
 
     function setLanguage(lang) {
       localStorage.setItem('lang', lang);
-      if(lang === 'fr') {
+      if (lang === 'fr') {
         window.location.href = '/production/';
-      } else if(lang === 'en') {
+      } else if (lang === 'en') {
         window.location.href = '/production-en/';
       }
     }
 
     const savedLang = localStorage.getItem('lang');
-    if(savedLang === 'fr' && window.location.pathname.includes('/production-en/')) {
+    if (savedLang === 'fr' && window.location.pathname.includes('/production-en/')) {
       window.location.href = '/production/';
     }
   </script>
-
 </body>
 </html>

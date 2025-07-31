@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sonsoee – offrm studio</title>
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/sonsoee.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body class="page-projet-sonsoee">
+  <a href="/index.html" class="site-name">offrm studio</a>
+
+  <div class="burger" onclick="toggleMenu()"></div>
+
+  <nav class="menu" id="menu">
+    <a href="/about/">about</a>
+    <a href="/members/">members</a>
+    <a href="/services-en/">services</a>
+    <a href="/withoffrm/">with offrm</a>
+    <a href="/contact-en/">contact</a>
+  </nav>
+
+  <main class="projet-wrapper">
+    <div class="projet-main">
+      <div class="projet-texte">
+        <h1>LOOKBOOK S/S 25 CAPSULE COLLECTION</h1>
+        <h2></h2>
+
+        <p><strong>client</strong> sonsoee</p>
+        <p><strong>year</strong> 2025</p>
+        <p><strong>our work</strong> planning, visual directing</p>
+        <p><strong>credits</strong> photo by Bae Sumin</p>
+      </div>
+
+      <div class="projet-image">
+        <img src="../sonsoee1.jpg" alt="Lookbook sonsoee">
+      </div>
+    </div>
+
+    <div class="projet-grid">
+  <div><img src="../sonsoee2.jpg" alt="Lookbook sonsoee 2"></div>
+  <div><img src="../sonsoee3.jpg" alt="Lookbook sonsoee 3"></div>
+  <div><img src="../sonsoee4.jpg" alt="Lookbook sonsoee 4"></div>
+  <div><img src="../sonsoee5.jpg" alt="Lookbook sonsoee 5"></div>
+</div>
+  </main>
+
+  <div class="retour-production">
+    <a href="/production-en/" class="btn-retour">← back to production</a>
+  </div>
+</main>
+
+  <div class="footer-bar">
+    <div class="copyright">© 2025 offrm studio. All rights reserved.</div>
+    <div class="language-selector">
+      <a href="#" onclick="setLanguage('fr')">fr</a> |
+      <a href="#" onclick="setLanguage('en')">en</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    function setLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      if(lang === 'fr') {
+        window.location.href = '/projets/sonsoee/';
+      } else if(lang === 'en') {
+        window.location.href = '/projets/sonsoee/en/';
+      }
+    }
+
+    const savedLang = localStorage.getItem('lang');
+    if(savedLang === 'fr' && window.location.pathname.includes('/projets/sonsoee/en/')) {
+      window.location.href = '/projets/sonsoee/';
+    }
+  </script>
+</body>
+</html>
