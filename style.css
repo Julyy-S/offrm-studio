@@ -186,7 +186,8 @@ a:hover {
 .page-avecoffrm .site-name,
 .page-equipe .site-name,
 .page-projet-lldc .site-name,
-.page-projet-sonsoee .site-name {
+.page-projet-sonsoee .site-name,
+.page-mentions-legales .site-name {
   position: fixed;
   top: 20px;
   left: 20px;
@@ -426,6 +427,22 @@ a:hover {
   .page-contact .youtube-handle {
     font-size: 1rem;
   }
+
+  .page-mentions-legales .menu {
+    background-color: rgba(0, 0, 0, 0.6); /* noir semi-transparent */
+    border: 1px solid white;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .page-mentions-legales .menu a {
+    color: white;
+  }
+
+  .page-mentions-legales .menu a:hover {
+    color: white;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -484,7 +501,8 @@ a:hover {
   .page-standard .site-name,
   .page-equipe .site-name,
   .page-projet-lldc .site-name,
-  .page-projet-sonsoee .site-name {
+  .page-projet-sonsoee .site-name,
+  .page-mentions-legales .site-name {
     font-size: 2.8rem;
   }
 

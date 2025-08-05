@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal mentions – Offrm Studio</title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
+</head>
+  
+<body class="page-mentions-legales">
+    <a href="/index.html" class="site-name">offrm studio</a>
+
+
+  <div class="burger" onclick="toggleMenu()"></div>
+
+   <nav class="menu" id="menu">
+    <a href="/about/">about</a>
+    <a href="/members/">members</a>
+    <a href="/services-en/">services</a>
+    <a href="/withoffrm/">with offrm</a>
+    <a href="/contact-en/">contact</a>
+  </nav>
+
+  <div class="content" style="padding: 150px 20px; max-width: 800px;">
+    <h1>Legal Mentions</h1>
+
+    <p><strong>Site Editor:</strong><br>
+    This site is edited by Offrm Studio<br>
+    Email: <a href="mailto:info@offrmstudio.com">info@offrmstudio.com</a><br>
+    Publication Director: Offrm Studio</p>
+
+    <p><strong>Hosting:</strong><br>
+    The site is hosted by GitHub Pages<br>
+    GitHub, Inc. 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA<br>
+    Website: <a href="https://pages.github.com" target="_blank">https://pages.github.com</a></p>
+
+    <p><strong>Intellectual Property:</strong><br>
+    The website offrmstudio.com, as well as all associated rights, are the exclusive property of offrm studio.
+
+The user acknowledges that the entire website, as well as all of its content, including but not limited to the website's architecture, all texts, photographs, videos, images, and logos contained within the website (hereinafter referred to as the "Content"), are protected by intellectual property law and are the full and complete property of offrm studio.
+
+Any total or partial reproduction of the website offrmstudio.com and/or the content it comprises is prohibited without the express and prior authorization of offrm studio.
+</p>
+
+    <p><strong>Credits:</strong><br>
+    Design, development, and artistic direction: Offrm Studio</p>
+
+    <p style="margin-top: 2rem;">
+  <a href="/contact-en/" style="
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid white;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  ">
+    ← back to contact
+  </a>
+</p>
+
+
+</div>
+
+
+
+  <div class="footer-bar">
+  <div class="copyright">
+    © 2025 offrm studio. All rights reserved.
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="/mentions-legales/" class="mentions-link">legal mentions</a>
+  </div>
+  <div class="language-selector">
+    <a href="#" onclick="setLanguage('fr')">fr</a> | 
+    <a href="#" onclick="setLanguage('en')">en</a>
+  </div>
+</div>
+
+  <script>
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+  }
+
+  function setLanguage(lang) {
+  localStorage.setItem('lang', lang);
+  if(lang === 'fr') {
+    window.location.href = '/mentions-legales/';
+  } else if(lang === 'en') {
+    window.location.href = '/mentions-legales/legal-mentions/';
+  }
+}
+
+  const savedLang = localStorage.getItem('lang');
+const path = window.location.pathname;
+
+if (savedLang === 'fr' && path.includes('/mentions-legales/legal-mentions/')) {
+  window.location.href = '/mentions-legales/';
+} else if (savedLang === 'en' && path === '/mentions-legales/') {
+  window.location.href = '/mentions-legales/legal-mentions/';
+}
+</script>
+
+</body>
+</html>
