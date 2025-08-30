@@ -1,0 +1,238 @@
+.page-projet-yeohoon-again {
+  background-color: white;
+  color: black;
+  font-family: 'Asap', sans-serif;
+  font-weight: 300;
+  padding: 2rem;
+  margin: 0;
+}
+
+/* forcer le thème clair pour les éléments communs */
+.page-projet-yeohoon-again .site-name,
+.page-projet-yeohoon-again .burger,
+.page-projet-yeohoon-again .menu a,
+.page-projet-yeohoon-again .language-selector,
+.page-projet-yeohoon-again .language-selector a,
+.page-projet-yeohoon-again .copyright {
+  color: black !important;
+  background-color: transparent !important;
+}
+.page-projet-yeohoon-again .burger { background-color: black !important; }
+.page-projet-yeohoon-again .menu {
+  background: rgba(255,255,255,0.8);
+  border: 1px solid black;
+}
+.page-projet-yeohoon-again .menu a:hover {
+  color: black;
+  text-shadow: 0 0 6px rgba(0,0,0,.3);
+}
+
+.projet-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-top: 6rem;
+  padding-bottom: 5rem;
+}
+
+.projet-texte h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+  text-transform: none;
+}
+.projet-texte h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.projet-texte p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  display: flex;
+  gap: 1rem;
+}
+.projet-texte strong {
+  font-weight: 700;
+  display: inline-block;
+  width: 80px;
+}
+
+/* Vidéo responsive (16:9) */
+.video-block { margin-top: 1rem; }
+.video-embed {
+  position: relative;
+  width: 60%;       /* ↓ au lieu de 100% */
+  padding-top: 33.75%; /* 16:9 mais proportionnellement plus petit */
+  margin: 0 auto;   /* centre horizontalement */
+  overflow: hidden;
+  background: #145B72;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-placeholder {
+  color: white;
+  font-size: 1.25rem;
+  letter-spacing: .2px;
+}
+
+/* Images */
+
+
+
+/* Grille 3 images (juste sous la vidéo) */
+.projet-grid-three {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  padding: 4rem 0;
+}
+
+.projet-grid-three img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+
+/* Grille 2 images */
+.projet-grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 4rem 0;
+}
+
+.projet-grid-two img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Bloc 3 images type "split" — PAS de crop */
+.projet-grid-three-alt {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr; /* colonne gauche + étroite */
+  gap: 2rem;
+  padding: 3rem 0;
+  /* surtout pas align-items: stretch ici */
+}
+
+.projet-grid-three-alt .col-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Très important: pas de height:100% ni object-fit:cover -> sinon ça coupe */
+.projet-grid-three-alt img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* garde l’image entière */
+}
+
+/* annule l'ancien display:flex qui étirait la colonne droite */
+.projet-grid-three-alt .col-right {
+  display: block;
+}
+
+/* — réduire UNIQUEMENT le dernier bloc (3 images) — */
+.projet-grid-three-alt {
+  max-width: 980px;     /* limite la largeur de ce bloc seulement */
+  margin: 0 auto;       /* centre le bloc */
+  gap: 1.5rem;          /* un peu moins d'espace */
+  grid-template-columns: 0.8fr 1.2fr; /* colonne gauche plus étroite */
+}
+
+/* descendre un peu l’image de droite */
+.projet-grid-three-alt .col-right img {
+  margin-top: 5rem;   /* ajuste la valeur si tu veux plus/moins bas */
+}
+
+
+@media (max-width: 768px) {
+  .projet-grid-three {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+
+    .projet-grid-two {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+
+
+    .projet-grid-three-alt .col-left {
+    flex-direction: column;
+  }
+    .projet-grid-three-alt {
+    max-width: none;        /* plein pot sur mobile */
+    grid-template-columns: 1fr;
+  }
+    .projet-grid-three-alt .col-right img {
+    margin-top: 0;
+  }
+}
+
+
+
+
+/* Bouton retour */
+.retour-production { margin-top: 4rem; text-align: center; }
+.btn-retour {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background .3s ease, color .3s ease;
+}
+.btn-retour:hover { background-color: #333; color: white; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .projet-wrapper { display: flex; flex-direction: column; }
+  .projet-texte p { display: flex; flex-direction: column; gap: .2rem; }
+  .projet-texte p strong { width: auto; }
+
+
+  .video-embed {
+  width: 98%;          /* presque toute la largeur de l’écran */
+  padding-top: 53.5%;  /* ratio 16:9, mais plus grand qu’avant */
+  }
+} 
+
+/* Très grands écrans */
+@media (min-width: 1600px) {
+  body { font-size: 1.6rem; } /* augmente plus nettement */
+  .projet-texte h1 { font-size: 3.2rem; }
+  .projet-texte h2 { font-size: 1.8rem; }
+  .projet-texte p {
+    font-size: 1.5rem;
+    line-height: 1.9;
+    text-align: justify;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 3rem;
+  }
+  .projet-texte p strong { white-space: nowrap; }
+}
+

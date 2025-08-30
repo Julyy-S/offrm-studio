@@ -10,31 +10,6 @@ body.page-curation {
   overflow: hidden;
 }
 
-.page-curation .services {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row; /* ✅ Desktop : aligné horizontalement */
-  padding: 3rem 1rem;
-  text-align: center;
-  gap: 1rem;
-}
-
-.dot-separator {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  aspect-ratio: 1 / 1;
-  background-color: black;
-  border-radius: 50%;
-  margin: 0 0.5rem; /* Espace horizontal pour desktop */
-  vertical-align: middle;
-}
-
-.page-curation .services span {
-  font-size: 1rem;
-}
 
 .page-curation .services,
 .page-curation .services * {
@@ -68,38 +43,126 @@ body.page-curation {
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
+/* === Intro façon "production" === */
+.page-curation .intro-texte {
+  max-width: 900px;
+  margin: 15rem auto 1.5rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  text-align: center;
+}
 
+/* tailles de texte (aligne-toi sur ce que tu as déjà sur curation) */
+.page-curation .intro-ligne-1,
+.page-curation .intro-ligne-2 {
+  font-size: 1.3rem;      /* desktop normal */
+}
+
+/* le point noir entre les 2 lignes */
+.page-curation .intro-point {
+  width: 0.75em;
+  height: 0.75em;
+  background: black;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+/* bouton sous l'intro */
+.page-curation .back-button {
+  text-align: center;
+  margin: 4rem 0 4rem;
+}
+.page-curation .back-button a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+  color: black;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+.page-curation .back-button a:hover {
+  background-color: black;
+  color: white;
+}
+
+
+/* Mobile : empile les lignes, point centré plus petit */
 @media (max-width: 768px) {
-
-  .page-curation .services {
-    position: static;
-    transform: none;
+  .page-curation .intro-texte {
+    margin: 5rem auto 1rem;
     flex-direction: column;
-    gap: 1.5rem;
-    padding: 1rem 1rem 2rem 1rem;  /* ✅ Texte plus haut */
-    text-align: center;
+    gap: 1rem;
   }
-
-  .page-curation .services span {
+  .page-curation .intro-ligne-1,
+  .page-curation .intro-ligne-2 {
     font-size: 1rem;
-    text-align: center;
   }
-
-  .dot-separator {
+  .page-curation .intro-point {
     width: 8px;
     height: 8px;
-    margin: 0.5rem 0;
+  }
+    .page-curation .intro-texte {
+    margin: 6rem auto 2rem;     /* un peu plus d’air */
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;        /* centre horizontalement */
+    justify-content: center;    /* centre verticalement si plus d’espace */
+    text-align: center;
+  }
+
+  .page-curation .intro-ligne-1,
+  .page-curation .intro-ligne-2 {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .page-curation .intro-point {
+    width: 10px;
+    height: 10px;
+    margin: 0.8rem 0;
+  }
+
+  .page-curation .back-button {
+    text-align: center;
+    margin-top: 2rem;          /* espace entre texte et bouton */
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .page-curation .services span {
-    font-size: 1.3rem; /* même que les autres pages sur desktop normal */
+@media (min-width: 1600px) {
+  .page-curation .intro-texte {
+    max-width: 1400px;
+    gap: 6rem;
+    align-items: center;   /* ✅ centre verticalement le point */
+  }
+
+  .page-curation .intro-ligne-1,
+  .page-curation .intro-ligne-2 {
+    font-size: 2.2rem;
+    line-height: 1.6;
+  }
+
+  .page-curation .intro-ligne-1 {
+    white-space: nowrap;   /* reste sur une ligne */
+  }
+
+  .page-curation .intro-ligne-2 {
+    max-width: 46ch;       /* force le retour à la ligne */
+    text-align: left;      /* optionnel : ou center si tu veux */
+  }
+
+  .page-curation .intro-point {
+    width: 1.4em;
+    height: 1.4em;
+  }
+
+  .page-curation .back-button a {
+  padding: 1rem 2.5rem;
+  font-size: 1.3rem;
   }
 }
 
-@media screen and (min-width: 1600px) {
-  .page-curation .services span {
-    font-size: 2.4rem; /* pour grands écrans */
-  }
-}

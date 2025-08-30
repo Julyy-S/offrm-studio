@@ -72,22 +72,36 @@ body.page-production {
   position: relative;
 }
 
+/* viewport */
 .carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 2rem;
-  scroll-behavior: smooth;
-  scroll-padding: 1rem;
-  max-width: 90vw;
-  padding: 1rem 0;
+  overflow: hidden;
+  max-width: calc(3 * 260px + 2 * 2rem);
 }
+
+/* track */
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  transition: transform 0.5s ease;
+}
+
+@media screen and (min-width: 769px) {
+  .carousel-container {
+    margin-bottom: 4rem; /* espace supplémentaire sous le carrousel */
+  }
+}
+
+
+@media (min-width: 1440px) {
+  .carousel { max-width: calc(3 * 340px + 2 * 3rem); }
+  .carousel-track { gap: 3rem; }
+}
+
 
 .carousel-slide {
   position: relative; /* ✅ nécessaire pour positionner le caption */
   width: 260px;
   height: 360px;
-  border-radius: 12px;
   overflow: hidden;
   background: #f0f0f0;
   flex: 0 0 auto;
@@ -200,6 +214,36 @@ body.page-production {
 }
 
 
+/* Bouton retour services */
+.page-production .back-button {
+  text-align: center;
+  margin: 3rem 0 7rem 0;   /* espace autour du bouton */
+}
+
+.page-production .back-button a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 2px solid black;
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.page-production .back-button a:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Sur très grands écrans, bouton encore plus gros */
+@media (min-width: 1600px) {
+  .page-production .back-button a {
+    padding: 1rem 2.5rem;
+    font-size: 1.3rem;
+  }
+}
+
+
 @media screen and (max-width: 768px) {
 
   .intro-texte {
@@ -229,30 +273,7 @@ body.page-production {
     margin: 1.2rem auto;
   }
 
-  .carousel-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    background: transparent;
-    opacity: 1;
-    padding: 0;           /* supprime l’espace blanc autour */
-    border: none;
-    font-size: 2rem;
-    line-height: 1;
-  }
-
-  .carousel-nav.left {
-    left: 1rem;
-  }
-
-  .carousel-nav.right {
-    right: 1rem;
-  }
-  .carousel-nav:hover {
-  opacity: 0.5;
-  }
-
+  
   .page-production .menu {
     background-color: rgba(255, 255, 255, 0.8); /* fond blanc semi-transparent */
     border: 1px solid black;
@@ -267,4 +288,142 @@ body.page-production {
     color: black;
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   }
+
+  /* Conteneur : centrage + rognage du débordement */
+  .carousel {
+    max-width: 92vw;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative; /* pour positionner les flèches */
+  }
+
+  /* Piste : un peu d'espace entre slides */
+  .carousel-track {
+    display: flex;        /* au cas où */
+    gap: 1rem;            /* espace entre slides */
+    will-change: transform;
+  }
+
+  /* 1 slide par écran (flex-basis fixe en vw) */
+  .carousel-slide {
+    flex: 0 0 84vw;       /* ≈ 1 slide visible */
+    height: 58vh;         /* hauteur confortable */
+    max-height: 520px;    /* cap pour petits écrans */
+    overflow: hidden;     /* coins arrondis utiles */
+  }
+
+  /* Images qui remplissent bien sans déformation */
+  .carousel-slide img,
+  .carousel-slide picture,
+  .carousel-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* pas d’étirement */
+    display: block;
+  }
+
+  /* Légende lisible sur image */
+  .slide-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0.9rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.45), rgba(0,0,0,0));
+    color: #fff;
+  }
+  .slide-caption h3 { font-size: 1rem; line-height: 1.2; margin: 0 0 0.25rem; }
+  .slide-caption p  { font-size: 0.92rem; line-height: 1.35; margin: 0; }
+
+  /* Bouton "voir plus" / CTA dans la légende (si présent) */
+  .slide-caption .btn-view {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    padding: 0.45rem 0.9rem;
+    backdrop-filter: blur(3px);
+    background: rgba(255,255,255,0.85);
+    color: #111;
+    border-radius: 999px;
+  }
+
+  /* Flèches : superposées, finger-friendly */
+    .carousel {
+    overflow-x: auto;                 /* défilement horizontal natif */
+    scroll-snap-type: x mandatory;    /* snap slide par slide */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;            /* Firefox : masque la barre */
+  }
+  .carousel::-webkit-scrollbar {      /* WebKit : masque la barre */
+    display: none;
+  }
+
+  /* 2) On neutralise le translateX appliqué par le JS en desktop */
+  .carousel-track {
+    transform: none !important;       /* empêche le blocage sur 1→2 */
+  }
+
+  /* 3) Chaque slide “accroche” le bord au scroll */
+  .carousel-slide {
+    scroll-snap-align: start;
+    /* garde ta base responsive, ex. 84–86vw selon goût */
+    flex: 0 0 86vw;
+  }
+
+
+    /* Flèches visibles en mobile (même design que desktop mais adaptées) */
+  .carousel-nav {
+    display: flex;                /* pour centrer la flèche */
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    background: transparent;      /* pas de fond */
+    color: black;
+    border: none;
+    font-size: 1.8rem;            /* taille de la flèche */
+    padding: 0;                   /* pas de padding qui crée un carré */
+    width: 44px;                  /* zone cliquable tactile (≈44px recommandé) */
+    height: 44px;
+    cursor: pointer;
+  }
+
+  .carousel-nav:focus,
+  .carousel-nav:active {
+    outline: none;
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+
+
+  .carousel-nav.left  { left: 0.5rem; }
+  .carousel-nav.right { right: 0.5rem; }
+
+
+    /* Espace sous le carrousel sur mobile */
+  .carousel-container {
+    margin-bottom: 2rem; /* ajuste la valeur si tu veux plus/moins d'espace */
+  }
+}
+
+
+
+
+/* Espace sous le carrousel (desktop) + sécurité footer fixe */
+@media (min-width: 769px) {
+  .carousel-container {
+    margin-bottom: 3rem !important; /* force l’air sous le carrousel */
+  }
+  body.page-production {
+    padding-bottom: 10rem; /* évite que le footer fixe masque le bas de page */
+  }
+}
+
+/* Très grands écrans : un peu plus d'air */
+@media (min-width: 1440px) {
+  .carousel-container { margin-bottom: 1rem !important; }
+  body.page-production { padding-bottom: 1rem; }
 }

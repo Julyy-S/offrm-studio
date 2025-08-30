@@ -10,37 +10,6 @@ body.page-representation {
   overflow: hidden;
 }
 
-.page-representation .services {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row; /* ✅ Desktop : aligné horizontalement */
-  padding: 3rem 1rem;
-  text-align: center;
-  gap: 1rem;
-}
-
-.dot-separator {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  aspect-ratio: 1 / 1;
-  background-color: black;
-  border-radius: 50%;
-  margin: 0 0.5rem; /* ✅ Meilleur espacement horizontal pour desktop */
-  vertical-align: middle;
-}
-
-.page-representation .services span {
-  font-size: 1rem;
-}
-
-.page-representation .services,
-.page-representation .services * {
-  color: black;
-}
-
 
 /* Representation – inverser couleurs globales */
 
@@ -70,51 +39,131 @@ body.page-representation {
 }
 
 
+
+
+
+/* === Intro façon "production" === */
+.page-representation .intro-texte {
+  max-width: 900px;
+  margin: 15rem auto 1.5rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  text-align: center;
+}
+
+/* tailles de texte (aligne-toi sur ce que tu as déjà sur curation) */
+.page-representation .intro-ligne-1,
+.page-representation .intro-ligne-2 {
+  font-size: 1.3rem;      /* desktop normal */
+}
+
+/* le point noir entre les 2 lignes */
+.page-representation .intro-point {
+  width: 0.75em;
+  height: 0.75em;
+  background: black;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+/* bouton sous l'intro */
+.page-representation .back-button {
+  text-align: center;
+  margin: 4rem 0 4rem;
+}
+
+.page-representation .back-button a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+  color: black;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.page-representation .back-button a:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
-
-  .page-representation .services {
-    position: static;              /* ✅ annule l'absolu du style.css */
-    transform: none;               /* ✅ annule translateY */
-    flex-direction: column;        /* ✅ vertical pour mobile */
-    gap: 1.5rem;
-    padding: 1rem 1rem 2rem 1rem;  /* ✅ plus haut grâce au padding-top augmenté */
-    text-align: center;
+  .page-representation .intro-texte {
+    margin: 5rem auto 1rem;
+    flex-direction: column;
+    gap: 1rem;
   }
-
-  .page-representation .services span {
+  .page-representation .intro-ligne-1,
+  .page-representation .intro-ligne-2 {
     font-size: 1rem;
-    text-align: center;
   }
-
-  .dot-separator {
+  .page-representation .intro-point {
     width: 8px;
     height: 8px;
-    margin: 0.5rem 0; /* ✅ espacement vertical pour mobile */
+  }
+
+  .page-representation .intro-texte {
+    margin: 6rem auto 2rem;     /* un peu plus d’air */
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;        /* centre horizontalement */
+    justify-content: center;    /* centre verticalement si plus d’espace */
+    text-align: center;
+  }
+
+  .page-representation .intro-ligne-1,
+  .page-representation .intro-ligne-2 {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .page-representation .intro-point {
+    width: 10px;
+    height: 10px;
+    margin: 0.8rem 0;
+  }
+
+  .page-representation .back-button {
+    text-align: center;
+    margin-top: 2rem;          /* espace entre texte et bouton */
   }
 }
 
-.page-representation .services span {
-  font-size: 1rem;
-}
 
-/* Taille sur desktop normaux */
-@media screen and (min-width: 1024px) {
-  .page-representation .services span {
-    font-size: 1.3rem;
+@media (min-width: 1600px) {
+  .page-representation .intro-texte {
+    max-width: 1400px;
+    gap: 6rem;
+    align-items: center;   /* ✅ centre verticalement le point */
   }
-}
 
-/* Taille sur grands écrans */
-@media screen and (min-width: 1440px) {
-  .page-representation .services span {
-    font-size: 1.8rem;
-  }
-}
-
-/* Taille sur très grands écrans */
-@media screen and (min-width: 1600px) {
-  .page-representation .services span {
+  .page-representation .intro-ligne-1,
+  .page-representation .intro-ligne-2 {
     font-size: 2.2rem;
+    line-height: 1.6;
+  }
+
+  .page-representation .intro-ligne-1 {
+    white-space: nowrap;   /* reste sur une ligne */
+  }
+
+  .page-representation .intro-ligne-2 {
+    max-width: 46ch;       /* force le retour à la ligne */
+    text-align: left;      /* optionnel : ou center si tu veux */
+  }
+
+  .page-representation .intro-point {
+    width: 1.4em;
+    height: 1.4em;
+  }
+
+  .page-representation .back-button a {
+  padding: 1rem 2.5rem;
+  font-size: 1.3rem;
   }
 }
-

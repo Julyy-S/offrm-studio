@@ -24,52 +24,127 @@
   </nav>
 
   <div class="intro-texte">
-  <p class="intro-ligne-1">production audiovisuelle</p>
-  <div class="intro-point"></div>
-  <p class="intro-ligne-2">
-    nous réalisons des films artistiques, des films de marques, des clips musicaux, des séries, des documentaires, des lookbooks et éditoriaux.
-  </p>
-</div>
+    <p class="intro-ligne-1">production audiovisuelle</p>
+    <div class="intro-point"></div>
+    <p class="intro-ligne-2">
+      nous réalisons des films artistiques, des films de marques, des clips musicaux, des séries, des documentaires, des lookbooks et éditoriaux.
+    </p>
+  </div>
 
 
 
   <div class="carousel-container">
-  <button class="carousel-nav left" onclick="scrollCarousel(-1)">‹</button>
+  <button class="carousel-nav left" onclick="scrollCarousel(-1)" aria-label="projets précédents">‹</button>
 
-  <div class="carousel" id="carousel">
-    <div class="carousel-slide">
-      <img src="LLDC.jpg" alt="LLDC">
-      <div class="slide-caption">
-        <p>court-métrage, 2024</p>
-        <a href="/projets/lldc" class="btn-view">voir plus</a>
+  <div class="carousel" id="carousel"><!-- viewport -->
+    <div class="carousel-track" id="carouselTrack"><!-- track -->
+      <!-- 👇 tes slides inchangés -->
+      <div class="carousel-slide">
+        <img src="LLDC.jpg" alt="LLDC">
+        <div class="slide-caption">
+          <p>court-métrage, 2024</p>
+          <a href="/projets/lldc" class="btn-view">voir plus</a>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <img src="sonsoee-project.jpg" alt="sonsoee">
+        <div class="slide-caption">
+          <p>sonsoee S/S lookbook, 2025</p>
+          <a href="/projets/sonsoee" class="btn-view">voir plus</a>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <img src="yeohoon.png" alt="yeohoon-again">
+        <div class="slide-caption">
+          <p>yeohoon "again" mv, 2025</p>
+          <a href="/projets/yeohoon-again/" class="btn-view">voir plus</a>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <img src="y-htg.png" alt="yeohoon-htg">
+        <div class="slide-caption">
+          <p>yeohoon "hit the gas" mv, 2025</p>
+          <a href="/projets/yeohoon-htg/" class="btn-view">voir plus</a>
+        </div>
       </div>
     </div>
-
-    <div class="carousel-slide">
-      <img src="sonsoee-project.jpg" alt="sonsoee">
-      <div class="slide-caption">
-        <p>sonsoee S/S lookbook, 2025</p>
-        <a href="/projets/sonsoee" class="btn-view">voir plus</a>
-      </div>
   </div>
 
-  <button class="carousel-nav right" onclick="scrollCarousel(1)">›</button>
+  <button class="carousel-nav right" onclick="scrollCarousel(1)" aria-label="projets suivants">›</button>
+</div>
+
+<div class="back-button">
+  <a href="/services/">← retour services</a>
 </div>
 
 
 
-  <script>
-    function scrollCarousel(direction) {
-      const carousel = document.getElementById('carousel');
-      const slideWidth = carousel.querySelector('.carousel-slide').offsetWidth + 32;
-      carousel.scrollBy({ left: slideWidth * direction, behavior: 'smooth' });
+<script>
+  let currentIndex = 0;
+
+  function scrollCarousel(direction) {
+    const track  = document.getElementById('carouselTrack');
+    const slides = track.querySelectorAll('.carousel-slide');
+
+    // largeur d’un slide + gap
+    const gapStr = getComputedStyle(track).gap || "0px";
+    const gap = parseFloat(gapStr);
+    const slideWidth = slides[0].offsetWidth + gap;
+
+    const visibleCount = 3;
+    const maxIndex = Math.max(0, slides.length - visibleCount);
+
+    currentIndex = Math.min(Math.max(0, currentIndex + direction), maxIndex);
+    track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+  }
+</script>
+
+<script>
+/* --- Activer les flèches sur mobile avec scroll natif --- */
+(function () {
+  const mq = window.matchMedia('(max-width: 768px)');
+
+  // Fonction mobile : fait défiler le viewport d'une slide (+gap)
+  function mobileScrollCarousel(direction) {
+    const viewport = document.getElementById('carousel');        // .carousel (overflow-x:auto)
+    const track    = document.getElementById('carouselTrack');   // .carousel-track
+    if (!viewport || !track) return;
+
+    const firstSlide = track.querySelector('.carousel-slide');
+    if (!firstSlide) return;
+
+    const gapStr = getComputedStyle(track).gap || "0px";
+    const gap    = parseFloat(gapStr) || 0;
+    const step   = firstSlide.getBoundingClientRect().width + gap;
+
+    viewport.scrollBy({ left: direction * step, behavior: 'smooth' });
+  }
+
+  // Bascule la fonction globale scrollCarousel selon la largeur d'écran
+  function bind() {
+    if (mq.matches) {
+      // En mobile, on redéfinit la fonction utilisée par les boutons existants
+      window.scrollCarousel = mobileScrollCarousel;
+    } else {
+      // En desktop, on laisse ta fonction originale (déjà définie plus haut)
+      // donc rien à faire ici.
     }
-  </script>
+  }
+
+  mq.addEventListener ? mq.addEventListener('change', bind) : window.addEventListener('resize', bind);
+  bind();
+})();
+</script>
+
+
 
   <div class="footer-bar">
     <div class="copyright">© 2025 offrm studio. tous droits réservés.</div>
     <div class="language-selector">
-      <a href="#" onclick="setLanguage('fr')">fr</a> | 
+      <a href="#" onclick="setLanguage('fr')">fr</a> |
       <a href="#" onclick="setLanguage('en')">en</a>
     </div>
   </div>

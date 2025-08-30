@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>yeohoon hit the gas – offrm studio</title>
+
+  <!-- styles globaux + style de la page -->
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/projets/yeohoon-htg/y-htg.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body class="page-projet-yeohoon-htg">
+  <a href="/index.html" class="site-name">offrm studio</a>
+
+  <div class="burger" onclick="toggleMenu()"></div>
+
+  <nav class="menu" id="menu">
+    <a href="/about/">about</a>
+    <a href="/members/">members</a>
+    <a href="/services-en/">services</a>
+    <a href="/withoffrm/">with offrm</a>
+    <a href="/contact-en/">contact</a>
+  </nav>
+
+  <main class="projet-wrapper">
+    <div class="projet-texte">
+      <h1>MUSIC VIDEO “HIT THE GAS” – YEOHOON</h1>
+      <h2>directed by Charlène Bolou</h2>
+
+      <p><strong>client</strong> yeohoon</p>
+      <p><strong>year</strong> 2025</p>
+      <p><strong>our work</strong> direction, production, casting</p>
+      <p><strong>credits</strong> d.o.p Joohyeong Kim | with Yoon Yeohoon &amp; Shin Youhyun</p>
+    </div>
+
+
+<!-- Vidéo -->
+<section class="video-block">
+  <div class="video-embed">
+    <iframe 
+      src="https://www.youtube.com/embed/phdQnLhgxD8?si=TYPGqWuklPLpUjlW"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+
+<!-- Image sous la vidéo -->
+<section class="image-block">
+  <img src="/projets/yeohoon-htg/images/htg1.png" alt="Hit The Gas - Yeohoon" class="projet-image">
+</section>
+
+<!-- Bloc de 4 photos -->
+<section class="gallery-block">
+  <div class="gallery-grid">
+    <img src="/projets/yeohoon-htg/images/htg2.png" alt="htg2" class="gallery-img">
+    <img src="/projets/yeohoon-htg/images/htg3.png" alt="htg3" class="gallery-img">
+    <img src="/projets/yeohoon-htg/images/htg4.png" alt="htg4" class="gallery-img">
+    <img src="/projets/yeohoon-htg/images/htg5.png" alt="htg5" class="gallery-img">
+  </div>
+</section>
+
+<section class="image-block">
+  <img src="/projets/yeohoon-htg/images/htg6.png" alt="Hit The Gas - Yeohoon6" class="projet-image">
+</section>
+
+
+    <div class="retour-production">
+      <a href="/production-en/" class="btn-retour">← back to production</a>
+    </div>
+  </main>
+
+  <div class="footer-bar">
+    <div class="copyright">© 2025 offrm studio. All rights reserved.</div>
+    <div class="language-selector">
+      <a href="#" onclick="setLanguage('fr')">fr</a> | 
+      <a href="#" onclick="setLanguage('en')">en</a>
+    </div>
+  </div>
+
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    function setLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      if (lang === 'fr') {
+        window.location.href = '/projets/yeohoon-htg/';
+      } else if (lang === 'en') {
+        window.location.href = '/projets/yeohoon-htg/en/';
+      }
+    }
+
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang === 'fr' && window.location.pathname.includes('/projets/yeohoon-htg/en/')) {
+      window.location.href = '/projets/yeohoon-htg/';
+    }
+  </script>
+</body>
+</html>

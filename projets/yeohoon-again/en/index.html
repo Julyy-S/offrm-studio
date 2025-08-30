@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>yeohoon again – offrm studio</title>
+
+  <!-- styles globaux + style de la page -->
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/projets/yeohoon-again/yeohoon.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body class="page-projet-yeohoon-again">
+  <a href="/index.html" class="site-name">offrm studio</a>
+
+  <div class="burger" onclick="toggleMenu()"></div>
+
+  <nav class="menu" id="menu">
+    <a href="/about/">about</a>
+    <a href="/members/">members</a>
+    <a href="/services-en/">services</a>
+    <a href="/withoffrm/">with offrm</a>
+    <a href="/contact-en/">contact</a>
+  </nav>
+
+  <main class="projet-wrapper">
+    <div class="projet-texte">
+      <h1>CLIP VIDÉO “AGAIN” – YEOHOON</h1>
+      <h2>directed by Charlène Bolou</h2>
+
+      <p><strong>client</strong> yeohoon</p>
+      <p><strong>year</strong> 2025</p>
+      <p><strong>our work</strong> direction, production, casting</p>
+      <p><strong>credits</strong> d.o.p Joohyeong Kim | with Yoon Yeohoon &amp; Shin Youhyun</p>
+    </div>
+
+    <!-- Vidéo -->
+<!-- Vidéo -->
+<section class="video-block">
+  <div class="video-embed">
+    <iframe 
+      src="https://www.youtube.com/embed/jdce1BR01Q4?si=Z9GgiS5LxNn93lBM"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+
+
+
+<!-- Bloc 3 images -->
+    <div class="projet-grid-three">
+      <div><img src="/projets/yeohoon-again/images/mirror.png" alt="mirror"></div>
+      <div><img src="/projets/yeohoon-again/images/redtrees.png" alt="red trees"></div>
+      <div><img src="/projets/yeohoon-again/images/blueear.png" alt="blue ear"></div>
+    </div>
+
+
+<!-- Bloc 2 images -->
+<div class="projet-grid-two">
+  <div><img src="/projets/yeohoon-again/images/yh2.png" alt="yh2"></div>
+  <div><img src="/projets/yeohoon-again/images/y-tree.png" alt="y tree"></div>
+</div>
+
+
+  <!-- Bloc 3 images (comme la maquette) -->
+<div class="projet-grid-three-alt">
+  <div class="col-left">
+    <div><img src="/projets/yeohoon-again/images/hands.png" alt="hands"></div>
+    <div><img src="/projets/yeohoon-again/images/suntree.png" alt="sun tree"></div>
+  </div>
+  <div class="col-right">
+    <img src="/projets/yeohoon-again/images/face.png" alt="face">
+  </div>
+</div>
+
+    <div class="retour-production">
+      <a href="/production-en/" class="btn-retour">← back to production</a>
+    </div>
+  </main>
+
+  <div class="footer-bar">
+    <div class="copyright">© 2025 offrm studio. all rights reserved.</div>
+    <div class="language-selector">
+      <a href="#" onclick="setLanguage('fr')">fr</a> | 
+      <a href="#" onclick="setLanguage('en')">en</a>
+    </div>
+  </div>
+
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    function setLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      if (lang === 'fr') {
+        window.location.href = '/projets/yeohoon-again/';
+      } else if (lang === 'en') {
+        window.location.href = '/projets/yeohoon-again/en/';
+      }
+    }
+
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang === 'fr' && window.location.pathname.includes('/projets/yeohoon-again/en/')) {
+      window.location.href = '/projets/yeohoon-again/';
+    }
+  </script>
+</body>
+</html>
