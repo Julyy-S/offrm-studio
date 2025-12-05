@@ -90,6 +90,37 @@
     }
   </script>
 
+  <!-- Cookie Banner -->
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-content">
+    <p>
+      Nous utilisons des cookies pour les statistiques et pour afficher des contenus externes (YouTube). Vous pouvez accepter ou refuser.
+    </p>
+    <div class="cookie-buttons">
+      <button id="cookie-accept">Accepter</button>
+      <button id="cookie-decline" class="decline">Refuser</button>
+    </div>
+  </div>
+</div>
+  <script>
+    document.getElementById("cookie-accept").addEventListener("click", function() {
+      localStorage.setItem("cookieConsent", "accepted");
+      document.getElementById("cookie-banner").style.display = "none";
+    });
+
+    document.getElementById("cookie-decline").addEventListener("click", function() {
+      localStorage.setItem("cookieConsent", "declined");
+      document.getElementById("cookie-banner").style.display = "none";
+    });
+
+    window.onload = function() {
+      const consent = localStorage.getItem("cookieConsent");
+      if (consent === "accepted" || consent === "declined") {
+        document.getElementById("cookie-banner").style.display = "none";
+      }
+    };
+  </script>
+
 </body>
 </html>
 

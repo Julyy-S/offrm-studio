@@ -62,9 +62,14 @@
     <!-- Vidéo -->
 <!-- Vidéo -->
 <section class="video-block">
-  <div class="video-embed">
-    <iframe 
-      src="https://www.youtube.com/embed/jdce1BR01Q4?si=Z9GgiS5LxNn93lBM"
+  <div class="video-embed" data-youtube="https://www.youtube.com/embed/jdce1BR01Q4?si=Z9GgiS5LxNn93lBM">
+    <div class="video-placeholder">
+      <p>This video is hosted on YouTube and may set cookies.</p>
+      <button class="video-consent-btn">Allow YouTube</button>
+    </div>
+
+    <iframe
+      src=""
       title="YouTube video player"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -137,5 +142,81 @@
       window.location.href = '/projets/yeohoon-again/';
     }
   </script>
+
+
+<script>
+  // Fonction qui charge toutes les vidéos (utilise l'attribut data-youtube du conteneur)
+  function loadVideoEmbeds() {
+    document.querySelectorAll(".video-embed").forEach(container => {
+      const iframe = container.querySelector("iframe");
+      const youtubeUrl = container.dataset.youtube; // on lit data-youtube du container
+      if (iframe && youtubeUrl) {
+        iframe.src = youtubeUrl;
+        container.classList.add("video-embed--loaded");
+      }
+    });
+  }
+
+  // Si le consentement global existe et est "accepted", charger tout de suite
+  if (localStorage.getItem("cookieConsent") === "accepted") {
+    loadVideoEmbeds();
+  }
+
+  // Boutons "Autoriser YouTube" locaux (un par vidéo)
+  document.addEventListener("click", function (e) {
+    if (e.target && e.target.classList.contains("video-consent-btn")) {
+      // Enregistrer consentement global et charger les vidéos
+      localStorage.setItem("cookieConsent", "accepted");
+
+      // Si tu as un bandeau cookie avec id "cookie-banner", on le masque aussi (si présent)
+      const banner = document.getElementById("cookie-banner");
+      if (banner) banner.style.display = "none";
+
+      loadVideoEmbeds();
+    }
+  });
+</script>
+
+  <!-- Cookie Banner -->
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-content">
+    <p>
+      We use cookies for analytics and to display external content (like YouTube). You can accept or decline.
+    </p>
+    <div class="cookie-buttons">
+      <button id="cookie-accept">Accept</button>
+      <button id="cookie-decline" class="decline">Decline</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  // Afficher le bandeau si aucun choix n'a été fait
+  if (!localStorage.getItem("cookieConsent")) {
+    document.getElementById("cookie-banner").style.display = "block";
+  }
+
+  // Accepter les cookies → charger via loadVideoEmbeds
+  document.getElementById("cookie-accept").addEventListener("click", function () {
+    localStorage.setItem("cookieConsent", "accepted");
+    document.getElementById("cookie-banner").style.display = "none";
+
+    loadVideoEmbeds(); // ✅ on utilise TON système propre
+  });
+
+  // Refuser → ne charge jamais YouTube
+  document.getElementById("cookie-decline").addEventListener("click", function () {
+    localStorage.setItem("cookieConsent", "declined");
+    document.getElementById("cookie-banner").style.display = "none";
+  });
+
+  // Si déjà accepté → charger via loadVideoEmbeds
+  if (localStorage.getItem("cookieConsent") === "accepted") {
+    loadVideoEmbeds(); // ✅ pas d'autre méthode !
+  }
+</script>
+
+
 </body>
 </html>

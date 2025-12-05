@@ -61,12 +61,16 @@
 }
 
 /* Vidéo responsive (16:9) */
-.video-block { margin-top: 1rem; }
+/* Vidéo responsive (16:9) */
+.video-block { 
+  margin-top: 1rem; 
+}
+
 .video-embed {
   position: relative;
-  width: 60%;       /* ↓ au lieu de 100% */
-  padding-top: 33.75%; /* 16:9 mais proportionnellement plus petit */
-  margin: 0 auto;   /* centre horizontalement */
+  width: 60%;             /* ← vidéo plus petite comme avant */
+  padding-top: 33.75%;    /* ← ratio 16:9 version ancienne */
+  margin: 0 auto;         /* ← centre */
   overflow: hidden;
   background: #145B72;
   display: flex;
@@ -80,12 +84,48 @@
   width: 100%;
   height: 100%;
   border: 0;
+  display: none;          /* on masque tant que pas autorisé */
 }
+
+.video-embed.video-embed--loaded iframe {
+  display: block;         /* quand autorisé */
+}
+
+/* ← amélioration nécessaire pour RGPD */
 .video-placeholder {
+  position: absolute;     /* ABSOLU pour ne PAS agrandir le conteneur */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   color: white;
   font-size: 1.25rem;
   letter-spacing: .2px;
+  padding: 20px;
+  text-align: center;
+  background: rgba(0,0,0,0.6); /* overlay */
 }
+
+.video-embed.video-embed--loaded .video-placeholder {
+  display: none;
+}
+
+.video-consent-btn {
+  margin-top: 10px;
+  background: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
 
 /* Images */
 
@@ -163,6 +203,45 @@
 }
 
 
+
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 9999;
+  font-family: sans-serif;
+}
+
+.cookie-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.cookie-buttons button {
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#cookie-accept {
+  background: black;
+  color: white;
+}
+
+#cookie-decline {
+  background: #ddd;
+}
+
+
 @media (max-width: 768px) {
   .projet-grid-three {
     grid-template-columns: 1fr;
@@ -216,6 +295,10 @@
   .video-embed {
   width: 98%;          /* presque toute la largeur de l’écran */
   padding-top: 53.5%;  /* ratio 16:9, mais plus grand qu’avant */
+  }
+
+  .video-placeholder {
+    font-size: 0.5rem; /* plus petit que sur desktop */
   }
 } 
 
