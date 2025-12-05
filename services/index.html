@@ -103,6 +103,13 @@
   </div>
 </div>
   <script>
+        // Afficher le bandeau si aucun choix n'a été fait
+
+      if (!localStorage.getItem("cookieConsent")) {
+        document.getElementById("cookie-banner").style.display = "block";
+      }
+
+      // La suite
       document.getElementById("cookie-accept").addEventListener("click", function() {
         localStorage.setItem("cookieConsent", "accepted");
         document.getElementById("cookie-banner").style.display = "none";
