@@ -103,22 +103,22 @@
   </div>
 </div>
   <script>
-    document.getElementById("cookie-accept").addEventListener("click", function() {
-      localStorage.setItem("cookieConsent", "accepted");
-      document.getElementById("cookie-banner").style.display = "none";
-    });
-
-    document.getElementById("cookie-decline").addEventListener("click", function() {
-      localStorage.setItem("cookieConsent", "declined");
-      document.getElementById("cookie-banner").style.display = "none";
-    });
-
-    window.onload = function() {
-      const consent = localStorage.getItem("cookieConsent");
-      if (consent === "accepted" || consent === "declined") {
+      document.getElementById("cookie-accept").addEventListener("click", function() {
+        localStorage.setItem("cookieConsent", "accepted");
         document.getElementById("cookie-banner").style.display = "none";
-      }
-    };
+      });
+
+      document.getElementById("cookie-decline").addEventListener("click", function() {
+        localStorage.setItem("cookieConsent", "declined");
+        document.getElementById("cookie-banner").style.display = "none";
+      });
+
+      window.addEventListener("load", function() {
+        const consent = localStorage.getItem("cookieConsent");
+        if (consent === "accepted" || consent === "declined") {
+          document.getElementById("cookie-banner").style.display = "none";
+        }
+      });
   </script>
 
 </body>
