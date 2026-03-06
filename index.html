@@ -9,6 +9,30 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
   <meta name="google-site-verification" content="hT5xWbzk_IsK9mt2z5cKfAAuiZo5FdmmrLhvJtUK1sg" />
+
+      <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png">
+
+  <!-- Open Graph / Social preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://offrmstudio.com/">
+  <meta property="og:title" content="offrm studio">
+  <meta property="og:description" content="Studio créatif dédié à la représentation de marques, à la production audiovisuelle et à la curation d'expositions et d'événements.">
+  <meta property="og:image" content="https://offrmstudio.com/social-preview.png">
+
+  <!-- JSON-LD structured data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "offrm studio",
+    "alternateName": ["offrmstudio", "offrm studio creative", "offrm", "offroom"],
+    "url": "https://offrmstudio.com/",
+    "description": "Studio créatif dédié à la représentation de marques, à la production audiovisuelle et à la curation d'expositions et d'événements.",
+    "logo": "https://offrmstudio.com/social-preview.png",
+    "sameAs": ["https://www.instagram.com/offrmstudio", "https://www.linkedin.com/company/offrmstudio"]
+  }
+  </script>
 </head>
 
 <body class="page-home">
@@ -19,12 +43,8 @@
       window.location.href = "/services/";
     }
 
-    // Redirection après 3 secondes
-    setTimeout(redirectToServices, 3000);
-
-    // Redirection immédiate si clic ou scroll
-    document.addEventListener('click', redirectToServices);
-    document.addEventListener('scroll', redirectToServices);
-  </script>
+    document.addEventListener('click', redirectToServices, { once: true });
+    document.addEventListener('scroll', redirectToServices, { once: true });
+</script>
 </body>
 </html>
