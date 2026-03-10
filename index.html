@@ -46,5 +46,45 @@
     document.addEventListener('click', redirectToServices, { once: true });
     document.addEventListener('scroll', redirectToServices, { once: true });
 </script>
+
+
+  <!-- Cookie Banner -->
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-content">
+    <p>
+      We use cookies for analytics and to display external content (like YouTube). You can accept or decline.
+    </p>
+    <div class="cookie-buttons">
+      <button id="cookie-accept">Accept</button>
+      <button id="cookie-decline" class="decline">Decline</button>
+    </div>
+  </div>
+</div>
+
+    <script>
+      // Afficher le bandeau si aucun choix n'a été fait
+      if (!localStorage.getItem("cookieConsent")) {
+        document.getElementById("cookie-banner").style.display = "block";
+      }
+
+      // La suite
+      document.getElementById("cookie-accept").addEventListener("click", function() {
+        localStorage.setItem("cookieConsent", "accepted");
+        document.getElementById("cookie-banner").style.display = "none";
+      });
+
+      document.getElementById("cookie-decline").addEventListener("click", function() {
+        localStorage.setItem("cookieConsent", "declined");
+        document.getElementById("cookie-banner").style.display = "none";
+      });
+
+      window.addEventListener("load", function() {
+        const consent = localStorage.getItem("cookieConsent");
+        if (consent === "accepted" || consent === "declined") {
+          document.getElementById("cookie-banner").style.display = "none";
+        }
+      });
+  </script>
+
 </body>
 </html>
