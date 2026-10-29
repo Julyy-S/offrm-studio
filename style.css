@@ -241,7 +241,16 @@ a:hover {
   z-index: 12;
 }
 
+/*Pour rendre blurry l'arrière du menu dans la page a-propos */
+.page-a-propos .menu {
+  background: rgba(0, 0, 0, 0.75);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+
 @media screen and (min-width: 1024px) {
+
   .page-a-propos .wrapper {
     display: flex;
     height: 100vh;
@@ -460,6 +469,12 @@ a:hover {
 
   .page-a-propos .image-side {
     display: none;
+  }
+
+  .page-a-propos .menu {
+  background: rgba(0, 0, 0, 0,85);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   }
 
   .footer-bar {
