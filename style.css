@@ -268,8 +268,7 @@ a:hover {
     font-size: 1.3rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 6vh;
+    justify-content: safe center;  /* centré verticalement */
     text-align: justify;
   }
 
