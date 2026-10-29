@@ -270,6 +270,7 @@ a:hover {
     flex-direction: column;
     justify-content: flex-start;
     margin-top: 6vh;
+    text-align: justify;
   }
 
   .page-contact .content {
@@ -414,12 +415,28 @@ a:hover {
 /* ========== Mobile screens ========== */
 
 @media screen and (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    overflow-y: hidden;
+    scroll-behavior: none;
+    background-color: black;
+  }
+
   .page-a-propos {
-    background-image: url("CJ_gris.jpg");
-    background-size: 140% auto;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    position: relative;
+    z-index: 0;
+    height: 100dvh;
+  }
+
+  /* L'image de fond, fixe et qui couvre tout l'écran */
+  .page-a-propos::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("CJ_gris.jpg") center / cover no-repeat;
+    z-index: -1;
   }
 
   .page-a-propos .wrapper {
@@ -446,21 +463,12 @@ a:hover {
     display: none;
   }
 
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: auto;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    background-color: black;
+  .footer-bar {
+    font-size: 0.8rem;
   }
 
-  body.page-a_propos {
-  background-image: url('CJ_gris.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* important pour couvrir tout le scroll */
+  .copyright {
+    font-size: 0.6rem;
   }
 
   .footer-bar {
@@ -469,6 +477,7 @@ a:hover {
   .copyright {
     font-size: 0.6rem;
   }
+
 
   .page-contact .youtube-handle {
     font-size: 1rem;
