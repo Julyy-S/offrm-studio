@@ -33,7 +33,7 @@ body.page-services::before {
 @media (min-width: 768px) {
   .page-services .services {
     flex-direction: row;
-    gap: 4rem;
+    gap: 7rem;
     font-size: 1.3rem;
   }
 }
@@ -96,7 +96,10 @@ body.page-services::before {
 @media (max-width: 768px) {
   .page-services .services {
     gap: 1rem; /* espace vertical entre chaque bloc */
-    padding: 3rem 1rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    height: 100dvh;       /* exactement la hauteur visible */
+    min-height: 100dvh;
   }
 
   .dot-separator {

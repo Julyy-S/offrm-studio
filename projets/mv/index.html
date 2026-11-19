@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>clips musicaux – offrm studio</title>
+  <meta name="description" content="Studio créatif dédié à la représentation de marques, à la production audiovisuelle et à la curation d'expositions et d'événements.">
+
+  <!-- styles globaux + style de la page -->
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/projets/mv/mv.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png">
+
+  <!-- Open Graph / Social preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://offrmstudio.com/">
+  <meta property="og:title" content="offrm studio">
+  <meta property="og:description" content="Studio créatif dédié à la représentation de marques, à la production audiovisuelle et à la curation d'expositions et d'événements.">
+  <meta property="og:image" content="https://offrmstudio.com/social-preview.png">
+
+  <!-- JSON-LD structured data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "offrm studio",
+    "alternateName": ["offrmstudio", "offrm studio creative", "offrm", "offroom"],
+    "url": "https://offrmstudio.com/projets/mv/",
+    "description": "Studio créatif dédié à la représentation de marques, à la production audiovisuelle et à la curation d'expositions et d'événements.",
+    "logo": "https://offrmstudio.com/social-preview.png",
+    "sameAs": ["https://www.instagram.com/offrmstudio", "https://www.linkedin.com/company/offrmstudio"]
+  }
+  </script>
+</head>
+
+<body class="page-projet-mv">
+  <a href="/index.html" class="site-name">offrm studio</a>
+
+  <div class="burger" onclick="toggleMenu()"></div>
+
+  <nav class="menu" id="menu">
+    <a href="/a_propos/">à propos</a>
+    <a href="/equipe/">l'équipe</a>
+    <a href="/services/">services</a>
+    <a href="/avecoffrm/">avec offrm</a>
+    <a href="/contact/">contact</a>
+  </nav>
+
+  <main class="mv-wrapper">
+    <h1 class="visually-hidden">clips musicaux</h1>
+
+    <section class="mv-artiste">
+      <h2>Illona</h2>
+      <p>coming soon</p>
+    </section>
+
+    <section class="mv-artiste">
+      <h2>Yeohoon</h2>
+      <ul class="mv-liste">
+        <li><a href="/projets/yeohoon-again/">yeohoon “again” mv, 2025</a></li>
+        <li><a href="/projets/yeohoon-htg/">yeohoon “hit the gas” mv, 2025</a></li>
+      </ul>
+    </section>
+
+    <div class="retour-production">
+      <a href="/production/" class="btn-retour">← retour production</a>
+    </div>
+  </main>
+
+  <div class="footer-bar">
+    <div class="copyright">© 2026 offrm studio. Tous droits réservés.</div>
+    <div class="language-selector">
+      <a href="#" onclick="setLanguage('fr')">fr</a> |
+      <a href="#" onclick="setLanguage('en')">en</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    function setLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      if (lang === 'fr') {
+        window.location.href = '/projets/mv/';
+      } else if (lang === 'en') {
+        window.location.href = '/projets/mv/en/';
+      }
+    }
+
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang === 'fr' && window.location.pathname.includes('/projets/mv/en/')) {
+      window.location.href = '/projets/mv/';
+    }
+  </script>
+</body>
+</html>

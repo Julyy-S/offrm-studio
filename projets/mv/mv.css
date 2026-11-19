@@ -1,0 +1,186 @@
+/* ========== PAGE MV ========== */
+
+body.page-projet-mv {
+  background-color: white;
+  color: black;
+  font-family: 'Asap', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding-bottom: 6rem; /* évite que le footer fixe masque le bas de page */
+}
+
+/* Logo en haut à gauche (défini ici pour ne pas toucher à style.css) */
+.page-projet-mv .site-name {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+  text-transform: lowercase;
+  font-family: 'Asap', sans-serif;
+  font-weight: 300;
+  z-index: 12;
+}
+
+/* Thème clair pour les éléments communs */
+.page-projet-mv .site-name,
+.page-projet-mv .burger,
+.page-projet-mv .menu a,
+.page-projet-mv .language-selector,
+.page-projet-mv .language-selector a,
+.page-projet-mv .copyright {
+  color: black !important;
+  background-color: transparent !important;
+}
+
+.page-projet-mv .burger {
+  background-color: black !important;
+}
+
+.page-projet-mv .menu {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+}
+
+.page-projet-mv .menu a:hover {
+  color: black;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Titre de page invisible (utile pour le référencement et l'accessibilité) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ========== CONTENU ========== */
+
+.mv-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 8rem 14% 4rem 14%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.mv-artiste h2 {
+  margin: 0 0 0.2rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: none;  /* garde les majuscules : Illona, Yeohoon */
+}
+
+.mv-artiste p,
+.mv-liste a {
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.mv-artiste p {
+  margin: 0;
+}
+
+.mv-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mv-liste a {
+  color: black;
+  text-decoration: none;
+}
+
+/* ========== BOUTON RETOUR ========== */
+
+.retour-production {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.btn-retour {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-retour:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* ========== TRÈS GRANDS ÉCRANS ========== */
+
+/* ========== TRÈS GRANDS ÉCRANS ========== */
+ 
+@media (min-width: 1600px) {
+  .page-projet-mv .site-name {
+    font-size: 2.8rem;
+  }
+ 
+  /* Contenu centré verticalement sur grand écran (texte + bouton retour) */
+  body.page-projet-mv {
+    padding-bottom: 0;
+  }
+ 
+  .mv-wrapper {
+    min-height: 100vh;
+    padding: 8rem 14%;
+    justify-content: center;       /* secours pour les anciens navigateurs */
+    justify-content: safe center;  /* centré, sans couper le haut si le contenu est long */
+  }
+ 
+  .retour-production {
+    margin-top: 7rem;              /* bouton retour un peu plus bas */
+  }
+ 
+  .mv-artiste h2,
+  .mv-artiste p,
+  .mv-liste a {
+    font-size: 2.2rem;
+  }
+ 
+  .btn-retour {
+    font-size: 1.8rem;
+    padding: 1.4rem 3.4rem;
+  }
+}
+
+/* ========== MOBILE ========== */
+@media (max-width: 768px) {
+  body.page-projet-mv {
+    height: 100dvh;
+    min-height: 100dvh;
+    box-sizing: border-box;
+    padding-bottom: 0;          /* annule le 6rem du desktop */
+    overflow: hidden;           /* plus de scroll sur mobile */
+    overscroll-behavior: none;  /* supprime l'effet de rebond */
+  }
+
+  .mv-wrapper {
+    min-height: 100dvh;
+    padding: 6rem 1.5rem;
+    gap: 2.5rem;
+    justify-content: center;       /* secours pour les anciens navigateurs */
+    justify-content: safe center;  /* centré, sans couper le haut si le contenu est long */
+  }
+
+  .mv-artiste h2,
+  .mv-artiste p,
+  .mv-liste a {
+    font-size: 1.15rem;
+  }
+
+  .retour-production {
+    margin-top: 3rem;
+  }
+}

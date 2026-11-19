@@ -86,85 +86,42 @@ body.page-production {
 }
 
 @media screen and (min-width: 769px) {
-  .carousel-container {
-    margin-bottom: 4rem; /* espace supplémentaire sous le carrousel */
+  .slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* centre horizontalement tous les enfants */
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .slide-caption p {
+    margin: 0 0 0.5rem 0;
+    text-align: center;
+  }
+
+  .btn-view {
+    background: white;
+    color: black;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    text-decoration: none;
+    width: fit-content;
+    transition: background 0.3s ease;
+  }
+
+  .btn-view:hover {
+    background: #ddd;
   }
 }
-
-
-@media (min-width: 1440px) {
-  .carousel { max-width: calc(3 * 340px + 2 * 3rem); }
-  .carousel-track { gap: 3rem; }
-}
-
-
-.carousel-slide {
-  position: relative; /* ✅ nécessaire pour positionner le caption */
-  width: 260px;
-  height: 360px;
-  overflow: hidden;
-  background: #f0f0f0;
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.slide-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.25);
-  color: white;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;      /* centre horizontalement tous les enfants */
-  justify-content: center;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.slide-caption p {
-  margin: 0 0 0.5rem 0;
-  text-align: center;
-}
-
-.btn-view {
-  background: white;
-  color: black;
-  padding: 0.3rem 0.7rem;
-  font-size: 0.85rem;
-  border-radius: 4px;
-  text-decoration: none;
-  width: fit-content;
-  transition: background 0.3s ease;
-}
-
-.btn-view:hover {
-  background: #ddd;
-}
-
-.carousel-nav {
-  background: white;
-  color: black;
-  border: none;
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.carousel-nav:hover {
-  background: #f5f5f5;
-}
-
 
 
 @media screen and (min-width: 769px) {
@@ -183,6 +140,9 @@ body.page-production {
 
   .intro-ligne-2 {
     margin-top: -1rem;
+    text-align: justify;       /* ajouté */
+    text-justify: inter-word;  /* ajouté */
+    hyphens: auto;             /* ajouté : évite les grands trous entre les mots */
   }
 }
 
@@ -243,7 +203,7 @@ body.page-production {
   }
 }
 
-
+/* MOBILE */
 @media screen and (max-width: 768px) {
 
   .intro-texte {
@@ -289,38 +249,6 @@ body.page-production {
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   }
 
-  /* Conteneur : centrage + rognage du débordement */
-  .carousel {
-    max-width: 92vw;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative; /* pour positionner les flèches */
-  }
-
-  /* Piste : un peu d'espace entre slides */
-  .carousel-track {
-    display: flex;        /* au cas où */
-    gap: 1rem;            /* espace entre slides */
-    will-change: transform;
-  }
-
-  /* 1 slide par écran (flex-basis fixe en vw) */
-  .carousel-slide {
-    flex: 0 0 84vw;       /* ≈ 1 slide visible */
-    height: 58vh;         /* hauteur confortable */
-    max-height: 520px;    /* cap pour petits écrans */
-    overflow: hidden;     /* coins arrondis utiles */
-  }
-
-  /* Images qui remplissent bien sans déformation */
-  .carousel-slide img,
-  .carousel-slide picture,
-  .carousel-slide video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;    /* pas d’étirement */
-    display: block;
-  }
 
   /* Légende lisible sur image */
   .slide-caption {
@@ -331,6 +259,14 @@ body.page-production {
     padding: 0.75rem 0.9rem;
     background: linear-gradient(to top, rgba(0,0,0,0.45), rgba(0,0,0,0));
     color: #fff;
+
+    /* centrage, comme sur desktop */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
   }
   .slide-caption h3 { font-size: 1rem; line-height: 1.2; margin: 0 0 0.25rem; }
   .slide-caption p  { font-size: 0.92rem; line-height: 1.35; margin: 0; }
@@ -346,84 +282,133 @@ body.page-production {
     color: #111;
     border-radius: 999px;
   }
-
-  /* Flèches : superposées, finger-friendly */
-    .carousel {
-    overflow-x: auto;                 /* défilement horizontal natif */
-    scroll-snap-type: x mandatory;    /* snap slide par slide */
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;            /* Firefox : masque la barre */
-  }
-  .carousel::-webkit-scrollbar {      /* WebKit : masque la barre */
-    display: none;
-  }
-
-  /* 2) On neutralise le translateX appliqué par le JS en desktop */
-  .carousel-track {
-    transform: none !important;       /* empêche le blocage sur 1→2 */
-  }
-
-  /* 3) Chaque slide “accroche” le bord au scroll */
-  .carousel-slide {
-    scroll-snap-align: start;
-    /* garde ta base responsive, ex. 84–86vw selon goût */
-    flex: 0 0 86vw;
-  }
-
-
-    /* Flèches visibles en mobile (même design que desktop mais adaptées) */
-  .carousel-nav {
-    display: flex;                /* pour centrer la flèche */
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 5;
-    background: transparent;      /* pas de fond */
-    color: black;
-    border: none;
-    font-size: 1.8rem;            /* taille de la flèche */
-    padding: 0;                   /* pas de padding qui crée un carré */
-    width: 44px;                  /* zone cliquable tactile (≈44px recommandé) */
-    height: 44px;
-    cursor: pointer;
-  }
-
-  .carousel-nav:focus,
-  .carousel-nav:active {
-    outline: none;
-    background: none !important;
-    box-shadow: none !important;
-  }
-
-
-
-  .carousel-nav.left  { left: 0.5rem; }
-  .carousel-nav.right { right: 0.5rem; }
-
-
-    /* Espace sous le carrousel sur mobile */
-  .carousel-container {
-    margin-bottom: 2rem; /* ajuste la valeur si tu veux plus/moins d'espace */
-  }
 }
 
 
+/* ========== 4 PHOTOS ========== */
+.projets-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.7rem;
+  max-width: 1100px;
+  margin: 0 auto 3rem auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
 
+.projet {
+  position: relative;
+  display: block;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background: #f0f0f0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.projet img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Pas d'effet au survol de la photo */
+.projet:hover {
+  opacity: 1;
+  filter: none;
+}
+
+/* Effet uniquement sur le bouton "voir plus" */
+.projet .btn-view {
+  transition: background 0.3s ease;
+}
+
+.projet .btn-view:hover {
+  background: #bababa;
+}
+
+@media (min-width: 1440px) {
+  .projets-grid {
+    max-width: 1400px;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projets-grid {
+    grid-template-columns: repeat(2, 1fr);  /* 2 x 2 sur mobile */
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+    html,
+    body.page-production {
+      height: auto;
+      min-height: 100dvh;
+      overflow-x: hidden;   /* pas de scroll horizontal */
+      overflow-y: auto;     /* scroll vertical autorisé */
+    }
+
+    body.page-production {
+      padding-bottom: 3rem; /* évite que le footer fixe masque le bas de page */
+    }
+
+    .page-production .back-button {
+    margin: 2rem 0 1rem 0;     /* était 3rem 0 7rem 0 */
+  }
+}
 
 /* Espace sous le carrousel (desktop) + sécurité footer fixe */
 @media (min-width: 769px) {
-  .carousel-container {
-    margin-bottom: 3rem !important; /* force l’air sous le carrousel */
-  }
   body.page-production {
-    padding-bottom: 10rem; /* évite que le footer fixe masque le bas de page */
+    padding-bottom: 15rem; /* évite que le footer fixe masque le bas de page */
   }
 }
 
-/* Très grands écrans : un peu plus d'air */
-@media (min-width: 1440px) {
-  .carousel-container { margin-bottom: 1rem !important; }
-  body.page-production { padding-bottom: 1rem; }
+/* ========== TRÈS GRANDS ÉCRANS (1600px et +) : plus grand + centré ========== */
+@media (min-width: 1600px) {
+  body.page-production {
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 6rem 0;                 /* garde de l'air sous le logo et au-dessus du footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;         /* secours pour les anciens navigateurs */
+    justify-content: safe center;    /* centré verticalement, sans couper le haut */
+  }
+
+  .intro-texte {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+    font-size: 1.7rem;
+    line-height: 1.9;
+    box-sizing: border-box;
+  }
+
+  .projets-grid {
+    width: 100%;
+    max-width: min(1700px, 150vh);   /* grandit avec l'écran sans dépasser sa hauteur */
+    gap: 3rem;
+    margin: 0 auto 3rem auto;
+  }
+
+  .slide-caption p {
+    font-size: 1.5rem;
+  }
+
+  .btn-view {
+    font-size: 1.15rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .page-production .back-button {
+    margin: 2rem 0 0 0;
+  }
+
+  .page-production .back-button a {
+    padding: 1.1rem 2.8rem;
+    font-size: 1.5rem;
+  }
 }

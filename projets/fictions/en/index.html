@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fiction – offrm studio</title>
+  <meta name="description" content="Creative studio dedicated to brand representation, audiovisual production and curation of exhibitions and events.">
+
+  <!-- styles globaux + style de la page -->
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/projets/fictions/fictions.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png">
+
+  <!-- Open Graph / Social preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://offrmstudio.com/">
+  <meta property="og:title" content="offrm studio">
+  <meta property="og:description" content="Creative studio dedicated to brand representation, audiovisual production and curation of exhibitions and events.">
+  <meta property="og:image" content="https://offrmstudio.com/social-preview.png">
+
+  <!-- JSON-LD structured data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "offrm studio",
+    "alternateName": ["offrmstudio", "offrm studio creative", "offrm", "offroom"],
+    "url": "https://offrmstudio.com/projets/fictions/en/",
+    "description": "Creative studio dedicated to brand representation, audiovisual production and curation of exhibitions and events.",
+    "logo": "https://offrmstudio.com/social-preview.png",
+    "sameAs": ["https://www.instagram.com/offrmstudio", "https://www.linkedin.com/company/offrmstudio"]
+  }
+  </script>
+</head>
+
+<body class="page-projet-fictions">
+  <a href="/index.html" class="site-name">offrm studio</a>
+
+  <div class="burger" onclick="toggleMenu()"></div>
+
+  <nav class="menu" id="menu">
+    <a href="/about/">about</a>
+    <a href="/members/">members</a>
+    <a href="/services-en/">services</a>
+    <a href="/withoffrm/">with offrm</a>
+    <a href="/contact-en/">contact</a>
+  </nav>
+
+  <main class="fictions-wrapper">
+    <h1 class="visually-hidden">fiction</h1>
+
+    <!-- du plus récent au moins récent -->
+    <ul class="fictions-liste">
+      <li><span class="fiction-titre">“café thérapie”</span> series pilot, 2026 (coming soon)</li>
+      <li><a href="/projets/lldc/en/"><span class="fiction-titre">“les liens du cœur”</span> short film, 2024</a></li>
+    </ul>
+
+    <div class="retour-production">
+      <a href="/production-en/" class="btn-retour">← back to production</a>
+    </div>
+  </main>
+
+  <div class="footer-bar">
+    <div class="copyright">© 2026 offrm studio. all rights reserved.</div>
+    <div class="language-selector">
+      <a href="#" onclick="setLanguage('fr')">fr</a> |
+      <a href="#" onclick="setLanguage('en')">en</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    function setLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      if (lang === 'fr') {
+        window.location.href = '/projets/fictions/';
+      } else if (lang === 'en') {
+        window.location.href = '/projets/fictions/en/';
+      }
+    }
+
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang === 'fr' && window.location.pathname.includes('/projets/fictions/en/')) {
+      window.location.href = '/projets/fictions/';
+    }
+  </script>
+</body>
+</html>

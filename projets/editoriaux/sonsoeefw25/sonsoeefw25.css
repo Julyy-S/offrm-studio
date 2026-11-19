@@ -1,0 +1,235 @@
+/* ========== PAGE SONSOEE FW25 ========== */
+
+body.page-projet-sonsoeefw25 {
+  background-color: white;
+  color: black;
+  font-family: 'Asap', sans-serif;
+  font-weight: 300;
+  margin: 0;
+}
+
+/* Logo en haut à gauche (défini ici pour ne pas toucher à style.css) */
+.page-projet-sonsoeefw25 .site-name {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+  text-transform: lowercase;
+  font-family: 'Asap', sans-serif;
+  font-weight: 300;
+  z-index: 12;
+}
+
+/* Thème clair pour les éléments communs */
+.page-projet-sonsoeefw25 .site-name,
+.page-projet-sonsoeefw25 .burger,
+.page-projet-sonsoeefw25 .menu a,
+.page-projet-sonsoeefw25 .language-selector,
+.page-projet-sonsoeefw25 .language-selector a,
+.page-projet-sonsoeefw25 .copyright {
+  color: black !important;
+  background-color: transparent !important;
+}
+
+.page-projet-sonsoeefw25 .burger {
+  background-color: black !important;
+}
+
+.page-projet-sonsoeefw25 .menu {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+}
+
+.page-projet-sonsoeefw25 .menu a:hover {
+  color: black;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== PREMIER ÉCRAN : texte à gauche, photo à droite ========== */
+
+.fw-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 33%;   /* texte | photo */
+  column-gap: 2rem;
+  align-items: start;
+  padding: 7.5rem 10% 4rem 20px;    /* 20px à gauche = aligné sur le logo */
+  box-sizing: border-box;
+}
+
+.projet-texte h1 {
+  font-size: 1.5rem;
+  margin: 0 0 3rem 0;
+  font-weight: 700;
+  text-transform: none;  /* garde les majuscules écrites dans le HTML */
+}
+
+.projet-texte p {
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+  display: flex;
+  gap: 1rem;
+}
+
+.projet-texte strong {
+  font-weight: 700;
+  display: inline-block;
+  width: 80px;
+}
+
+.projet-photos img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========== DEUXIÈME ÉCRAN : deux photos collées, même taille ========== */
+
+.projet-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;                    /* photos collées */
+  width: 82%;
+  max-width: 145vh;          /* chaque photo reste au plus aussi haute que l'écran */
+  margin: 0 auto;
+}
+
+.projet-duo img {
+  width: 100%;
+  aspect-ratio: 2 / 3;       /* même taille pour les deux photos */
+  object-fit: cover;
+  display: block;
+}
+
+/* ========== PHOTO PAYSAGE ========== */
+
+.projet-paysage {
+  width: 75%;
+  margin: 4rem auto 0 auto;
+}
+
+.projet-paysage img {
+  width: 100%;
+  height: auto;              /* garde le format paysage d'origine */
+  display: block;
+}
+
+/* ========== TROIS PHOTOS CÔTE À CÔTE ========== */
+
+.projet-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3%;
+  width: 94%;
+  margin: 4rem auto 0 auto;
+}
+
+.projet-trio img {
+  width: 100%;
+  aspect-ratio: 2 / 3;       /* même taille pour les trois photos */
+  object-fit: cover;
+  display: block;
+}
+
+/* ========== BOUTON RETOUR ========== */
+
+.retour-production {
+  margin-top: 6rem;
+  padding-bottom: 6rem;      /* évite que le footer fixe masque le bouton */
+  text-align: center;
+}
+
+.btn-retour {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-retour:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* ========== TRÈS GRANDS ÉCRANS ========== */
+
+@media (min-width: 1600px) {
+  .page-projet-sonsoeefw25 .site-name {
+    font-size: 2.8rem;
+  }
+
+  body.page-projet-sonsoeefw25 {
+    font-size: 1.6rem;
+  }
+
+  .projet-texte h1 {
+    font-size: 3.2rem;
+  }
+
+  .projet-texte p {
+    font-size: 1.5rem;
+    line-height: 1.9;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 3rem;
+  }
+
+  .projet-texte p strong {
+    white-space: nowrap;
+  }
+
+  .btn-retour {
+    font-size: 1.3rem;
+    padding: 1rem 2.5rem;
+  }
+}
+
+/* ========== MOBILE ========== */
+
+@media (max-width: 768px) {
+  body.page-projet-sonsoeefw25 {
+    min-height: 100dvh;      /* le fond blanc couvre tout l'écran */
+    box-sizing: border-box;
+  }
+
+  .fw-wrapper {
+    grid-template-columns: 1fr;   /* texte puis photo, en colonne */
+    row-gap: 2rem;
+    padding: 6rem 1.5rem 3rem 1.5rem;
+  }
+
+  .projet-texte h1 {
+    margin-bottom: 2rem;
+  }
+
+  .projet-texte p {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .projet-texte p strong {
+    width: auto;
+  }
+
+  .projet-duo {
+    width: calc(100% - 3rem);    /* même marge que le texte, photos toujours côte à côte */
+    max-width: none;
+  }
+
+  .projet-paysage {
+    width: calc(100% - 3rem);
+    margin-top: 2rem;
+  }
+
+  .projet-trio {
+    width: calc(100% - 3rem);
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  .retour-production {
+    margin-top: 3rem;
+  }
+}

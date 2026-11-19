@@ -1,0 +1,300 @@
+/* ========== PAGE BRANDFILMS ========== */
+
+body.page-projet-brandfilms {
+  background-color: white;
+  color: black;
+  font-family: 'Asap', sans-serif;
+  font-weight: 300;
+  padding: 2rem;
+  margin: 0;
+}
+
+/* Logo en haut à gauche (défini ici pour ne pas toucher à style.css) */
+.page-projet-brandfilms .site-name {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+  text-transform: lowercase;
+  font-family: 'Asap', sans-serif;
+  font-weight: 300;
+  z-index: 12;
+}
+
+/* Thème clair pour les éléments communs */
+.page-projet-brandfilms .site-name,
+.page-projet-brandfilms .burger,
+.page-projet-brandfilms .menu a,
+.page-projet-brandfilms .language-selector,
+.page-projet-brandfilms .language-selector a,
+.page-projet-brandfilms .copyright {
+  color: black !important;
+  background-color: transparent !important;
+}
+
+.page-projet-brandfilms .burger {
+  background-color: black !important;
+}
+
+.page-projet-brandfilms .menu {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+}
+
+.page-projet-brandfilms .menu a:hover {
+  color: black;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== CONTENU ========== */
+
+.projet-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-top: 6rem;
+  padding-bottom: 5rem;
+}
+
+.projet-texte h1 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  text-transform: none;  /* garde les majuscules écrites dans le HTML */
+}
+
+.projet-texte p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  display: flex;
+  gap: 1rem;
+}
+
+.projet-texte strong {
+  font-weight: 700;
+  display: inline-block;
+  width: 80px;
+}
+
+/* ========== VIDÉO (16:9) ========== */
+
+.video-block {
+  margin-top: 1rem;
+}
+
+.video-embed {
+  position: relative;
+  width: 60%;
+  padding-top: 33.75%;    /* ratio 16:9 pour une largeur de 60% */
+  margin: 0 auto;
+  overflow: hidden;
+  background: #145B72;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: none;          /* masquée tant que le consentement n'est pas donné */
+}
+
+.video-embed.video-embed--loaded iframe {
+  display: block;
+}
+
+.video-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  letter-spacing: .2px;
+  padding: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.video-embed.video-embed--loaded .video-placeholder {
+  display: none;
+}
+
+.video-consent-btn {
+  margin-top: 10px;
+  background: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ========== BOUTON RETOUR ========== */
+
+.retour-production {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.btn-retour {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background .3s ease, color .3s ease;
+}
+
+.btn-retour:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* ========== BANDEAU COOKIES ========== */
+
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 9999;
+  font-family: sans-serif;
+}
+
+.cookie-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.cookie-buttons button {
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#cookie-accept {
+  background: black;
+  color: white;
+}
+
+#cookie-decline {
+  background: #ddd;
+}
+
+/* ========== TRÈS GRANDS ÉCRANS ========== */
+
+  /* Contenu centré verticalement et agrandi */
+  @media (min-width: 1600px) {
+  body.page-projet-brandfilms {
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;         /* secours pour les anciens navigateurs */
+    justify-content: safe center;    /* centré, sans couper le haut si le contenu est long */
+  }
+  .page-projet-brandfilms .site-name {
+    font-size: 3.6rem;
+  }
+
+  body.page-projet-brandfilms {
+    font-size: 1.6rem;
+  }
+
+  .projet-texte h1 {
+    font-size: 4.4rem;
+  }
+
+  .projet-texte p {
+    font-size: 2.1rem;
+    line-height: 1.9;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 3rem;
+  }
+
+  .projet-texte p strong {
+    white-space: nowrap;
+    width: 11rem;            /* colonne des libellés, élargie pour le texte plus grand */
+  }
+
+  .projet-wrapper {
+    width: 100%;
+    max-width: min(1600px, 140vh);   /* grandit avec l'écran sans dépasser sa hauteur */
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    gap: 3.5rem;
+  }
+
+  .video-embed {
+    width: 70%;
+    padding-top: 39.375%;            /* ratio 16:9 pour une largeur de 70% */
+  }
+
+  .video-placeholder {
+    font-size: 1.5rem;
+  }
+
+  .video-consent-btn {
+    font-size: 1.1rem;
+    padding: 12px 26px;
+  }
+
+  .retour-production {
+    margin-top: 5rem;
+  }
+
+ .btn-retour {
+    font-size: 1.8rem;
+    padding: 1.4rem 3.4rem;
+  }
+}
+
+/* ========== MOBILE ========== */
+
+@media (max-width: 768px) {
+  body.page-projet-brandfilms {
+    min-height: 100dvh;      /* le fond blanc couvre tout l'écran */
+    box-sizing: border-box;
+  }
+
+  .projet-texte p {
+    flex-direction: column;
+    gap: .2rem;
+  }
+
+  .projet-texte p strong {
+    width: auto;
+  }
+
+  .video-embed {
+    width: 98%;
+    padding-top: 53.5%;      /* ratio 16:9 pour une largeur de 98% */
+  }
+
+  .video-placeholder {
+    font-size: 0.5rem;
+  }
+}

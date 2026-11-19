@@ -1,0 +1,187 @@
+/* ========== PAGE FICTIONS ========== */
+
+body.page-projet-fictions {
+  background-color: white;
+  color: black;
+  font-family: 'Asap', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding-bottom: 6rem; /* évite que le footer fixe masque le bas de page */
+}
+
+/* Logo en haut à gauche (défini ici pour ne pas toucher à style.css) */
+.page-projet-fictions .site-name {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+  text-transform: lowercase;
+  font-family: 'Asap', sans-serif;
+  font-weight: 300;
+  z-index: 12;
+}
+
+/* Thème clair pour les éléments communs */
+.page-projet-fictions .site-name,
+.page-projet-fictions .burger,
+.page-projet-fictions .menu a,
+.page-projet-fictions .language-selector,
+.page-projet-fictions .language-selector a,
+.page-projet-fictions .copyright {
+  color: black !important;
+  background-color: transparent !important;
+}
+
+.page-projet-fictions .burger {
+  background-color: black !important;
+}
+
+.page-projet-fictions .menu {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+}
+
+.page-projet-fictions .menu a:hover {
+  color: black;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Titre de page invisible (utile pour le référencement et l'accessibilité) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ========== CONTENU ========== */
+
+.fictions-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 8rem 14% 4rem 14%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.fictions-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.fictions-liste li,
+.fictions-liste a {
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.fictions-liste a {
+  color: black;
+  text-decoration: none;
+}
+
+.fiction-titre {
+  font-weight: 700;
+}
+
+/* ========== BOUTON RETOUR ========== */
+
+.retour-production {
+  margin-top: 12rem;
+  text-align: center;
+}
+
+.btn-retour {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-retour:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* ========== TRÈS GRANDS ÉCRANS ========== */
+
+@media (min-width: 1600px) {
+    /* Contenu centré verticalement sur grand écran (texte + bouton retour) */
+  body.page-projet-fictions {
+    padding-bottom: 0;
+  }
+
+  .fictions-wrapper {
+    max-width: 1800px;           /* bloc plus large pour que le texte plus grand ne passe pas à la ligne */
+    min-height: 100vh;
+    padding: 8rem 14%;
+    justify-content: center;       /* secours pour les anciens navigateurs */
+    justify-content: safe center;  /* centré, sans couper le haut si le contenu est long */
+  }
+  .page-projet-fictions .site-name {
+    font-size: 2.8rem;
+  }
+
+  .fictions-liste {
+    gap: 3rem;
+  }
+
+  .fictions-liste li,
+  .fictions-liste a {
+    font-size: 3rem;
+  }
+
+  .retour-production {
+    margin-top: 16rem;
+  }
+
+  .btn-retour {
+    font-size: 1.8rem;
+    padding: 1.4rem 3.4rem;
+  }
+}
+
+/* ========== MOBILE ========== */
+
+@media (max-width: 768px) {
+  body.page-projet-fictions {
+    height: 100dvh;
+    min-height: 100dvh;
+    box-sizing: border-box;
+    padding-bottom: 0;          /* annule le 6rem du desktop */
+    overflow: hidden;           /* plus de scroll sur mobile */
+    overscroll-behavior: none;  /* supprime l'effet de rebond */
+  }
+
+  .fictions-wrapper {
+    min-height: 100dvh;
+    padding: 6rem 1.5rem;
+    gap: 2.5rem;
+    justify-content: center;       /* secours pour les anciens navigateurs */
+    justify-content: safe center;  /* centré, sans couper le haut si le contenu est long */
+  }
+
+  .fictions-liste {
+    gap: 1.5rem;
+  }
+
+  .fictions-liste li,
+  .fictions-liste a {
+    font-size: 1.15rem;
+  }
+
+  .retour-production {
+    margin-top: 3rem;
+  }
+}

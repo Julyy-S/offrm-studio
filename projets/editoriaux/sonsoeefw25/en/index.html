@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>editorial f/w 25 – offrm studio</title>
+  <meta name="description" content="Creative studio dedicated to brand representation, audiovisual production and curation of exhibitions and events.">
+
+  <!-- styles globaux + style de la page -->
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/projets/editoriaux/sonsoeefw25/sonsoeefw25.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png">
+
+  <!-- Open Graph / Social preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://offrmstudio.com/">
+  <meta property="og:title" content="offrm studio">
+  <meta property="og:description" content="Creative studio dedicated to brand representation, audiovisual production and curation of exhibitions and events.">
+  <meta property="og:image" content="https://offrmstudio.com/social-preview.png">
+
+  <!-- JSON-LD structured data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "offrm studio",
+    "alternateName": ["offrmstudio", "offrm studio creative", "offrm", "offroom"],
+    "url": "https://offrmstudio.com/projets/editoriaux/sonsoeefw25/en/",
+    "description": "Creative studio dedicated to brand representation, audiovisual production and curation of exhibitions and events.",
+    "logo": "https://offrmstudio.com/social-preview.png",
+    "sameAs": ["https://www.instagram.com/offrmstudio", "https://www.linkedin.com/company/offrmstudio"]
+  }
+  </script>
+</head>
+
+<body class="page-projet-sonsoeefw25">
+  <a href="/index.html" class="site-name">offrm studio</a>
+
+  <div class="burger" onclick="toggleMenu()"></div>
+
+  <nav class="menu" id="menu">
+    <a href="/about/">about</a>
+    <a href="/members/">members</a>
+    <a href="/services-en/">services</a>
+    <a href="/withoffrm/">with offrm</a>
+    <a href="/contact-en/">contact</a>
+  </nav>
+
+  <main>
+    <!-- First screen: text on the left, photo on the right -->
+    <div class="fw-wrapper">
+      <div class="projet-texte">
+        <h1>EDITORIAL F/W 25</h1>
+
+        <p><strong>client</strong> sonsoee</p>
+        <p><strong>year</strong> 2025</p>
+        <p><strong>our work</strong> production, visual direction, concept</p>
+        <p><strong>credits</strong> photo by Jeanne Dubresson | model Sora Choi</p>
+      </div>
+
+      <div class="projet-photos">
+        <img src="/projets/editoriaux/sonsoeefw25/photos/stranger_el.png" alt="sonsoee fw editorial 2025">
+      </div>
+    </div>
+
+    <!-- Two photos side by side, touching, same size -->
+    <section class="projet-duo">
+      <img src="/projets/editoriaux/sonsoeefw25/photos/stranger_el2.png" alt="sonsoee fw editorial 2025">
+      <img src="/projets/editoriaux/sonsoeefw25/photos/stranger_el1.png" alt="sonsoee fw editorial 2025">
+    </section>
+
+    <!-- Landscape photo -->
+    <section class="projet-paysage">
+      <img src="/projets/editoriaux/sonsoeefw25/photos/stranger_el3.png" alt="sonsoee fw editorial 2025">
+    </section>
+
+    <!-- Three photos side by side -->
+    <section class="projet-trio">
+      <img src="/projets/editoriaux/sonsoeefw25/photos/stranger_el4.png" alt="sonsoee fw editorial 2025">
+      <img src="/projets/editoriaux/sonsoeefw25/photos/stranger_el5.png" alt="sonsoee fw editorial 2025">
+      <img src="/projets/editoriaux/sonsoeefw25/photos/stranger_el6.png" alt="sonsoee fw editorial 2025">
+    </section>
+
+    <div class="retour-production">
+      <a href="/projets/editoriaux/en/" class="btn-retour">← back to editorials</a>
+    </div>
+  </main>
+
+  <div class="footer-bar">
+    <div class="copyright">© 2026 offrm studio. all rights reserved.</div>
+    <div class="language-selector">
+      <a href="#" onclick="setLanguage('fr')">fr</a> |
+      <a href="#" onclick="setLanguage('en')">en</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    function setLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      if (lang === 'fr') {
+        window.location.href = '/projets/editoriaux/sonsoeefw25/';
+      } else if (lang === 'en') {
+        window.location.href = '/projets/editoriaux/sonsoeefw25/en/';
+      }
+    }
+
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang === 'fr' && window.location.pathname.includes('/projets/editoriaux/sonsoeefw25/en/')) {
+      window.location.href = '/projets/editoriaux/sonsoeefw25/';
+    }
+  </script>
+</body>
+</html>
