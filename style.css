@@ -427,9 +427,15 @@ a:hover {
     margin: 0;
     padding: 0;
     height: auto;
-    overflow-y: hidden;
-    scroll-behavior: none;
     background-color: black;
+  }
+
+  body {
+  display: flow-root;   /* empêche la marge du premier élément de décaler le body */
+}
+    /* Blocage du scroll uniquement sur la page à propos */
+  body.page-a-propos {
+    overflow: hidden;
   }
 
   .page-a-propos {
