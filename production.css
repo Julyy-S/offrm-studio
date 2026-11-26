@@ -60,31 +60,6 @@ body.page-production {
 }
 
 
-
-.carousel-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding: 2rem 1rem;
-  max-width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-/* viewport */
-.carousel {
-  overflow: hidden;
-  max-width: calc(3 * 260px + 2 * 2rem);
-}
-
-/* track */
-.carousel-track {
-  display: flex;
-  gap: 2rem;
-  transition: transform 0.5s ease;
-}
-
 @media screen and (min-width: 769px) {
   .slide-caption {
     position: absolute;
@@ -219,7 +194,7 @@ body.page-production {
     margin: 0.8rem 0;
   }
 
-  /* texte aligné et centré !!! */
+  /* texte aligné et centré */
   .intro-ligne-2 {
     text-align: justify;
     text-justify: inter-word;
@@ -359,7 +334,7 @@ body.page-production {
   }
 }
 
-/* Espace sous le carrousel (desktop) + sécurité footer fixe */
+/* Espace sous les photos (desktop) + sécurité footer fixe */
 @media (min-width: 769px) {
   body.page-production {
     padding-bottom: 15rem; /* évite que le footer fixe masque le bas de page */
@@ -369,9 +344,10 @@ body.page-production {
 /* ========== TRÈS GRANDS ÉCRANS (1600px et +) : plus grand + centré ========== */
 @media (min-width: 1600px) {
   body.page-production {
+    height: auto;               /* annule le "height: 100vh" de style.css qui bloquait la hauteur de la page */
     min-height: 100vh;
     box-sizing: border-box;
-    padding: 6rem 0;                 /* garde de l'air sous le logo et au-dessus du footer */
+    padding: 6rem 0 3rem 0;                 /* garde de l'air sous le logo et au-dessus du footer */
     display: flex;
     flex-direction: column;
     justify-content: center;         /* secours pour les anciens navigateurs */
@@ -404,7 +380,7 @@ body.page-production {
   }
 
   .page-production .back-button {
-    margin: 2rem 0 0 0;
+    margin: 2rem 0 2rem 0;
   }
 
   .page-production .back-button a {

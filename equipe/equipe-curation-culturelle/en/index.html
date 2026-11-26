@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cultural curation team – Offrm Studio</title>
+  <meta name="description" content="Creative studio dedicated to brand representation, audiovisual production and curation of exhibitions and events.">
+
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/equipe.css">
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png">
+
+  <!-- Open Graph / Social preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://offrmstudio.com/">
+  <meta property="og:title" content="offrm studio">
+  <meta property="og:description" content="Creative studio dedicated to brand representation, audiovisual production and curation of exhibitions and events.">
+  <meta property="og:image" content="https://offrmstudio.com/social-preview.png">
+
+  <!-- JSON-LD structured data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "offrm studio",
+    "alternateName": ["offrmstudio", "offrm studio creative", "offrm", "offroom"],
+    "url": "https://offrmstudio.com/equipe/equipe-curation-culturelle/en/",
+    "description": "Creative studio dedicated to brand representation, audiovisual production and curation of exhibitions and events.",
+    "logo": "https://offrmstudio.com/social-preview.png",
+    "sameAs": ["https://www.instagram.com/offrmstudio", "https://www.linkedin.com/company/offrmstudio"]
+  }
+  </script>
+</head>
+
+<body class="page-equipe">
+    <a href="/index.html" class="site-name">offrm studio</a>
+
+
+  <div class="burger" onclick="toggleMenu()"></div>
+
+  <nav class="menu" id="menu">
+    <a href="/about/">about</a>
+    <a href="/equipe/members/">members</a>
+    <a href="/services-en/">services</a>
+    <a href="/withoffrm/">with offrm</a>
+    <a href="/contact-en/">contact</a>
+  </nav>
+
+
+    <!-- Section 1: Julie -->
+  <section class="section-equipe reverse">
+    <img src="/equipe/july.jpg" alt="Julie Sauliere">
+    <div class="texte">
+      <h2>Julie Sauliere <span class="dot-centered"></span> Co-founder of Offrm</h2>
+      <p>curator, organizer and artistic director of the studio's cultural events,
+        she sources brands and oversees exhibitions and pop-ups.
+        She creates the concept and visual identity of every project.</p>
+    </div>
+  </section>
+
+
+  <!-- Section 2: Charlène -->
+  <section class="section-equipe">
+    <img src="/equipe/charly.jpg" alt="Charlène Bolou">
+    <div class="texte">
+      <h2>Charlène Bolou <span class="dot-centered"></span> Co-founder of Offrm</h2>
+      <p>Curator and organizer of the studio's cultural events, she
+        sources brands and oversees exhibitions and pop-ups. Her 10 years
+        of experience in South Korea give her an expert eye on Korean trends
+        and culture.</p>
+    </div>
+  </section>
+
+
+  <!-- Section 3: Amira -->
+  <section class="section-equipe reverse">
+    <img src="/equipe/amira.jpg" alt="Amira A Gama">
+    <div class="texte">
+      <h2>Amira A Gama <span class="dot-centered"></span> Designer and artist</h2>
+      <p>Set designer of the studio's exhibitions in South Korea, she designs spaces
+        where each brand can express its essence and be presented as an original work of art.</p>
+    </div>
+  </section>
+
+    <div class="retour-equipe">
+      <a href="/equipe/members/" class="btn-retour">← back to members</a>
+    </div>
+
+
+  <!-- FOOTER -->
+  <div class="footer-bar">
+  <div class="copyright">© 2026 offrm studio. All rights reserved.</div>
+  <div class="language-selector">
+    <a href="#" onclick="setLanguage('fr')">FR</a> |
+    <a href="#" onclick="setLanguage('en')">EN</a>
+  </div>
+</div>
+
+
+
+  <script>
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+  }
+
+  function setLanguage(lang) {
+    localStorage.setItem('lang', lang);
+    if(lang === 'fr') {
+      window.location.href = '/equipe/equipe-curation-culturelle/';
+    } else if(lang === 'en') {
+      window.location.href = '/equipe/equipe-curation-culturelle/en/';
+    }
+  }
+
+  // Sur la page anglaise, on ne redirige que vers le français si c'est la langue enregistrée
+  const savedLang = localStorage.getItem('lang');
+  if(savedLang === 'fr' && window.location.pathname.includes('/equipe-curation-culturelle/en/')) {
+    window.location.href = '/equipe/equipe-curation-culturelle/';
+  }
+</script>
+
+</body>
+</html>

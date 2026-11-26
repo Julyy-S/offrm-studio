@@ -43,6 +43,30 @@ body.page-equipe {
 .section-equipe .texte p {
   line-height: 1.6;
   font-size: 1rem;
+  text-align: justify;
+}
+
+/* ========== BOUTON RETOUR ========== */
+
+.retour-equipe {
+  margin-top: 1rem;          /* était 12rem : le bouton remonte juste sous le dernier bloc */
+  padding-bottom: 6rem;      /* évite que le footer fixe masque le bouton */
+  text-align: center;
+}
+
+.btn-retour {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-retour:hover {
+  background-color: #333;
+  color: white;
 }
 
 
@@ -119,8 +143,19 @@ body.page-equipe {
   .section-equipe .texte h2 {
     font-size: 0.9rem;
   }
+
+  .retour-equipe {
+    margin-top: 2rem;
+    padding-bottom: 0;       /* le body a déjà 5rem de marge pour le footer fixe */
+  }
+
+  .btn-retour {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.4rem;
+  }
 }
 
+/* GRANDS ECRANS */
 @media screen and (min-width: 1600px) {
   .section-equipe .texte h2 {
     font-size: 1.9rem;
@@ -132,6 +167,15 @@ body.page-equipe {
 
   body.page-equipe {
     padding-top: 5rem;
+  }
+
+  .retour-equipe {
+    padding-bottom: 8rem;    /* footer plus grand sur très grands écrans */
+  }
+
+  .btn-retour {
+    font-size: 1.4rem;
+    padding: 1.1rem 2.7rem;
   }
 
   .section-equipe .texte {

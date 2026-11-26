@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>équipe – Offrm Studio</title>
+  <title>offrm studio – equipe</title>
   <meta name="description" content="Studio créatif dédié à la représentation de marques, à la production audiovisuelle et à la curation d'expositions et d'événements.">
 
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../equipe.css">
+
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/equipe/equipefrontpage.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
@@ -35,8 +37,9 @@
   </script>
 </head>
 
-<body class="page-equipe">
-    <a href="/index.html" class="site-name">offrm studio</a>
+<body class="page-equipefrontpage">
+
+  <a href="/index.html" class="site-name">offrm studio</a>
 
 
   <div class="burger" onclick="toggleMenu()"></div>
@@ -48,45 +51,16 @@
     <a href="/avecoffrm/">avec offrm</a>
     <a href="/contact/">contact</a>
   </nav>
+
+  <div class="equipefrontpage">
+    <a href="/equipe/equipe-curation-culturelle/">équipe curation culturelle</a>
+    <span class="dot-separator"></span>
+    <a href="/equipe/equipe-production-audiovisuelle/">équipe production audiovisuelle</a>
+  </div>
+
   
-  <!-- Section 1 : Charlène -->
-  <section class="section-equipe">
-    <img src="charly.jpg" alt="Charlène Bolou">
-    <div class="texte">
-      <h2>Charlène Bolou <span class="dot-centered"></span> Co-fondatrice d'Offrm</h2>
-      <p>Réalisatrice et productrice, elle imagine les récits du studio et veille à leur cohérence artistique et culturelle, de l'idée à la diffusion.</p>
-    </div>
-  </section>
 
-  <!-- Section 2 : Julie -->
-  <section class="section-equipe reverse">
-    <img src="july.jpg" alt="Julie Sauliere">
-    <div class="texte">
-      <h2>Julie Sauliere <span class="dot-centered"></span> Co-fondatrice d'Offrm</h2>
-      <p>Directrice artistique et productrice, elle pilote la vision créative du studio et accompagne le développement de chaque projet.</p>
-    </div>
-  </section>
-
-  <!-- Section 3 : Amira -->
-  <section class="section-equipe">
-    <img src="amira.jpg" alt="Amira A Gama">
-    <div class="texte">
-      <h2>Amira A Gama <span class="dot-centered"></span> Designer et artiste</h2>
-      <p>Scénographe des expositions du studio, elle conçoit des espaces où chaque œuvre dialogue avec la matière, la lumière et l'intention.</p>
-    </div>
-  </section>
-
-  <!-- Section 4 : Sohee -->
-  <section class="section-equipe reverse">
-    <img src="sohee.jpg" alt="Son Sohee">
-    <div class="texte">
-      <h2>Son Sohee <span class="dot-centered"></span> Fashion designer</h2>
-      <p>Cheffe costumière et styliste du studio, elle crée et dirige l'univers vestimentaire de nos projets — films, clips, performances et plus encore.</p>
-    </div>
-  </section>
-
-
-  <!-- FOOTER -->
+    <!-- FOOTER -->
   <div class="footer-bar">
   <div class="copyright">© 2026 offrm studio. Tous droits réservés.</div>
   <div class="language-selector">
@@ -108,18 +82,19 @@
     if(lang === 'fr') {
       window.location.href = '/equipe/';
     } else if(lang === 'en') {
-      window.location.href = '/members/';
+      window.location.href = '/equipe/members/';
     }
   }
 
   const savedLang = localStorage.getItem('lang');
-  if(savedLang === 'fr' && window.location.pathname.includes('/members/')) {
+  if(savedLang === 'fr' && window.location.pathname.includes('/equipe/members/')) {
     window.location.href = '/equipe/';
   }
   if(savedLang === 'en' && window.location.pathname.includes('/equipe/')) {
-    window.location.href = '/members/';
+    window.location.href = '/equipe/members/';
   }
 </script>
 
 </body>
 </html>
+
